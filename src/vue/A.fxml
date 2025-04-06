@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Region?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane fx:id="root" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.ControlerA">
+
+    <!-- Sidebar (Étape 1) -->
+    <left>
+        <VBox alignment="TOP_CENTER" prefHeight="529.0" prefWidth="103.0" spacing="10" style="-fx-background-color: #2c3e50; -fx-padding: 10;">
+            <children>
+                <Label text="To-do-liste" textFill="WHITE">
+                    <font>
+                        <Font size="17.0" />
+                    </font>
+                </Label>
+                <Button fx:id="dashboardButton" onAction="#handleDashboardButton" style="-fx-background-color: #2c3e50; -fx-text-fill: white;" text="Dashboard" />
+                <Button fx:id="progressButton" onAction="#handleProgressButton" style="-fx-background-color: #2c3e50; -fx-text-fill: white;" text="Progress" />
+                <Button fx:id="teamButton" onAction="#handleTeamButton" style="-fx-background-color: #2c3e50; -fx-text-fill: white;" text="Team" />
+                <Button fx:id="historyButton" onAction="#handleHistoryButton" style="-fx-background-color: #2c3e50; -fx-text-fill: white;" text="History" />
+                <Button fx:id="corboyButton" onAction="#handleCorboyButton" style="-fx-background-color: #2c3e50; -fx-text-fill: white;" text="Corboy" />
+
+                <Region prefHeight="190.0" prefWidth="83.0" />
+                <Separator prefHeight="32.0" prefWidth="83.0" />
+                <Button fx:id="settingsButton" onAction="#handleSettingsButton" prefHeight="43.0" prefWidth="59.0" style="-fx-background-color: #2c3e50; -fx-text-fill: white;" text="Settings" />
+                <Button fx:id="logoutButton" onAction="#handleLogoutButton" prefHeight="33.0" prefWidth="54.0" style="-fx-background-color: #2c3e50; -fx-text-fill: white;" text="Logout" />
+            </children>
+        </VBox>
+    </left>
+
+    <!-- Main Content (Étape 2) -->
+    <center>
+        <VBox spacing="20" style="-fx-padding: 20; -fx-background-color: #ecf0f1;">
+            <!-- Statistiques -->
+            <HBox spacing="20">
+                <VBox style="-fx-background-color: #3498db; -fx-padding: 10; -fx-background-radius: 10;">
+                    <Label text="Your Tasks" textFill="white" />
+                    <Label fx:id="yourTasksLabel" text="0" textFill="white">
+                        <font>
+                            <Font name="System" size="18.0" />
+                        </font>
+                    </Label>
+                </VBox>
+                <VBox style="-fx-background-color: #2ecc71; -fx-padding: 10; -fx-background-radius: 10;">
+                    <Label text="Tasks Done" textFill="white" />
+                    <Label fx:id="tasksDoneLabel" text="0" textFill="white">
+                        <font>
+                            <Font name="System" size="18.0" />
+                        </font>
+                    </Label>
+                </VBox>
+                <VBox style="-fx-background-color: #e74c3c; -fx-padding: 10; -fx-background-radius: 10;">
+                    <Label text="Tasks Failed" textFill="white" />
+                    <Label fx:id="tasksFailedLabel" text="0" textFill="white">
+                        <font>
+                            <Font name="System" size="18.0" />
+                        </font>
+                    </Label>
+                </VBox>
+                <VBox style="-fx-background-color: #f39c12; -fx-padding: 10; -fx-background-radius: 10;">
+                    <Label text="In Progress" textFill="white" />
+                    <Label fx:id="inProgressLabel" text="0" textFill="white">
+                        <font>
+                            <Font name="System" size="18.0" />
+                        </font>
+                    </Label>
+                </VBox>
+            </HBox>
+
+            <!-- Tableau de tâches -->
+            <TableView fx:id="taskTable">
+                <columns>
+                    <TableColumn fx:id="titleColumn" prefWidth="150" text="Title" />
+                    <TableColumn fx:id="descriptionColumn" prefWidth="250" text="Description" />
+                    <TableColumn fx:id="statusColumn" prefWidth="100" text="Status" />
+                </columns>
+            </TableView>
+
+            <!-- Formulaire d'ajout -->
+            <HBox spacing="10">
+                <TextField fx:id="titleField" promptText="Title" />
+                <TextField fx:id="descriptionField" promptText="Description" />
+                <ChoiceBox fx:id="statusChoice" />
+                <Button onAction="#handleAddTask" text="Add Task" />
+            </HBox>
+        </VBox>
+    </center>
+</BorderPane>
