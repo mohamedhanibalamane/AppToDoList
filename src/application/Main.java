@@ -12,6 +12,8 @@ import vue.*;
 import controller.*; 
 public class Main extends Application {
 	
+	
+	
 	@Override
 	public void start(Stage stage) {
 		try {
