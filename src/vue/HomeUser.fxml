@@ -1,0 +1,404 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.geometry.Insets?>
+
+<BorderPane xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml" prefHeight="600" prefWidth="800">
+    <!-- Left sidebar panel -->
+    <left>
+        <VBox style="-fx-background-color: #1e1e1e; -fx-padding: 10;">
+            <children>
+                <Label text="to-do-liste" textFill="white" style="-fx-font-size: 20; -fx-font-weight: bold;">
+                    <VBox.margin>
+                        <Insets bottom="30" />
+                    </VBox.margin>
+                </Label>
+                
+                <HBox alignment="CENTER_LEFT" spacing="10">
+                    <children>
+                        <StackPane minWidth="25" minHeight="25" style="-fx-background-color: #3e3e3e; -fx-background-radius: 5;">
+                            <children>
+                                <Label text="⏹" textFill="white" />
+                            </children>
+                        </StackPane>
+                        <Label text="Dashboard" textFill="white" />
+                    </children>
+                    <VBox.margin>
+                        <Insets bottom="15" />
+                    </VBox.margin>
+                </HBox>
+                
+                <HBox alignment="CENTER_LEFT" spacing="10">
+                    <children>
+                        <StackPane minWidth="25" minHeight="25" style="-fx-background-color: #3e3e3e; -fx-background-radius: 5;">
+                            <children>
+                                <Label text="📈" textFill="white" />
+                            </children>
+                        </StackPane>
+                        <Label text="Progress" textFill="white" />
+                    </children>
+                    <VBox.margin>
+                        <Insets bottom="15" />
+                    </VBox.margin>
+                </HBox>
+                
+                <HBox alignment="CENTER_LEFT" spacing="10">
+                    <children>
+                        <StackPane minWidth="25" minHeight="25" style="-fx-background-color: #3e3e3e; -fx-background-radius: 5;">
+                            <children>
+                                <Label text="📋" textFill="white" />
+                            </children>
+                        </StackPane>
+                        <Label text="History" textFill="white" />
+                    </children>
+                    <VBox.margin>
+                        <Insets bottom="15" />
+                    </VBox.margin>
+                </HBox>
+                
+                <HBox alignment="CENTER_LEFT" spacing="10">
+                    <children>
+                        <StackPane minWidth="25" minHeight="25" style="-fx-background-color: #3e3e3e; -fx-background-radius: 5;">
+                            <children>
+                                <Label text="🗑" textFill="white" />
+                            </children>
+                        </StackPane>
+                        <Label text="Corbeille" textFill="white" />
+                    </children>
+                    <VBox.margin>
+                        <Insets bottom="15" />
+                    </VBox.margin>
+                </HBox>
+                
+                <HBox alignment="CENTER_LEFT" spacing="10">
+                    <children>
+                        <StackPane minWidth="25" minHeight="25" style="-fx-background-color: #3e3e3e; -fx-background-radius: 5;">
+                            <children>
+                                <Label text="⋯" textFill="white" />
+                            </children>
+                        </StackPane>
+                        <Label text="Your tasks" textFill="white" />
+                    </children>
+                    <VBox.margin>
+                        <Insets bottom="15" />
+                    </VBox.margin>
+                </HBox>
+                
+                <Region VBox.vgrow="ALWAYS" />
+                
+                <HBox alignment="CENTER_LEFT" spacing="10">
+                    <children>
+                        <StackPane minWidth="25" minHeight="25" style="-fx-background-color: #3e3e3e; -fx-background-radius: 5;">
+                            <children>
+                                <Label text="↩" textFill="white" />
+                            </children>
+                        </StackPane>
+                        <Label text="Logout" textFill="white" />
+                    </children>
+                </HBox>
+            </children>
+        </VBox>
+    </left>
+    
+    <!-- Main content area -->
+    <center>
+        <StackPane>
+            <!-- Top banner with pink cloud background -->
+            <VBox>
+                <children>
+                    <StackPane style="-fx-background-color: linear-gradient(to right, #ff9a9e, #aac0d1); -fx-min-height: 120;">
+                        <children>
+                            <VBox alignment="CENTER_LEFT" style="-fx-padding: 20 0 0 20;">
+                                <children>
+                                    <Label text="Hello Moh !" style="-fx-font-size: 24; -fx-font-weight: bold;" />
+                                    <Label text="It's good to see you again." style="-fx-font-size: 14;" />
+                                </children>
+                            </VBox>
+                        </children>
+                    </StackPane>
+                    
+                    <!-- Main content grid -->
+                    <GridPane hgap="10" vgap="10" style="-fx-padding: 10; -fx-background-color: #2a2a2a;">
+                        <columnConstraints>
+                            <ColumnConstraints percentWidth="33" />
+                            <ColumnConstraints percentWidth="33" />
+                            <ColumnConstraints percentWidth="33" />
+                        </columnConstraints>
+                        <rowConstraints>
+                            <RowConstraints prefHeight="80" />
+                            <RowConstraints prefHeight="80" />
+                            <RowConstraints prefHeight="80" />
+                            <RowConstraints prefHeight="80" />
+                            <RowConstraints prefHeight="80" />
+                        </rowConstraints>
+                        
+                        <!-- Task Status Row -->
+                        <HBox alignment="CENTER_LEFT" style="-fx-background-color: #353535; -fx-background-radius: 10; -fx-padding: 10;" 
+                              GridPane.columnIndex="0" GridPane.rowIndex="0">
+                            <children>
+                                <VBox spacing="5">
+                                    <children>
+                                        <Label text="Your task" textFill="white" style="-fx-font-size: 16;" />
+                                        <Label text="doing new" textFill="#cccccc" style="-fx-font-size: 12;" />
+                                    </children>
+                                </VBox>
+                            </children>
+                        </HBox>
+                        
+                        <HBox alignment="CENTER" style="-fx-background-color: #353535; -fx-background-radius: 10; -fx-padding: 10;" 
+                              GridPane.columnIndex="1" GridPane.rowIndex="0">
+                            <children>
+                                <VBox alignment="CENTER">
+                                    <children>
+                                        <Label text="14:30" textFill="white" style="-fx-font-size: 18; -fx-font-weight: bold;" />
+                                        <Label text="30min" textFill="#cccccc" style="-fx-font-size: 12;" />
+                                    </children>
+                                </VBox>
+                            </children>
+                        </HBox>
+                        
+                        <HBox alignment="CENTER" style="-fx-background-color: #353535; -fx-background-radius: 10; -fx-padding: 10;" 
+                              GridPane.columnIndex="2" GridPane.rowIndex="0">
+                            <children>
+                                <VBox alignment="CENTER">
+                                    <children>
+                                        <HBox alignment="CENTER" spacing="10">
+                                            <children>
+                                                <Label text="36" textFill="white" style="-fx-font-size: 18; -fx-font-weight: bold;" />
+                                                <StackPane minWidth="25" minHeight="25" style="-fx-background-color: #4caf50; -fx-background-radius: 50;">
+                                                    <children>
+                                                        <Label text="✓" textFill="white" />
+                                                    </children>
+                                                </StackPane>
+                                            </children>
+                                        </HBox>
+                                        <Label text="Tasks Done" textFill="#cccccc" style="-fx-font-size: 12;" />
+                                    </children>
+                                </VBox>
+                            </children>
+                        </HBox>
+                        
+                        <HBox alignment="CENTER" style="-fx-background-color: #c75d5d; -fx-background-radius: 10; -fx-padding: 10;" 
+                              GridPane.columnIndex="0" GridPane.rowIndex="1">
+                            <children>
+                                <VBox alignment="CENTER">
+                                    <children>
+                                        <HBox alignment="CENTER" spacing="10">
+                                            <children>
+                                                <Label text="12" textFill="white" style="-fx-font-size: 18; -fx-font-weight: bold;" />
+                                                <StackPane minWidth="25" minHeight="25" style="-fx-background-color: #ffffff33; -fx-background-radius: 50;">
+                                                    <children>
+                                                        <Label text="✕" textFill="white" />
+                                                    </children>
+                                                </StackPane>
+                                            </children>
+                                        </HBox>
+                                        <Label text="Tasks filed" textFill="#eeeeee" style="-fx-font-size: 12;" />
+                                    </children>
+                                </VBox>
+                            </children>
+                        </HBox>
+                        
+                        <!-- This day section -->
+                        <VBox style="-fx-background-color: #353535; -fx-background-radius: 10; -fx-padding: 10;" 
+                              GridPane.columnIndex="1" GridPane.rowIndex="1">
+                            <children>
+                                <Label text="this" textFill="white" style="-fx-font-size: 18;" />
+                                <Label text="day" textFill="white" style="-fx-font-size: 20; -fx-font-weight: bold;" />
+                            </children>
+                        </VBox>
+                        
+                        <!-- Coins section -->
+                        <VBox style="-fx-background-color: #353535; -fx-background-radius: 10; -fx-padding: 10;" 
+                              GridPane.columnIndex="2" GridPane.rowIndex="1">
+                            <children>
+                                <Label text="coines" textFill="white" style="-fx-font-size: 18;" />
+                                <Label text="2057c" textFill="white" style="-fx-font-size: 20; -fx-font-weight: bold;" />
+                            </children>
+                        </VBox>
+                        
+                        <!-- Meet POOZTD -->
+                        <VBox style="-fx-background-color: #353535; -fx-background-radius: 10; -fx-padding: 10;" 
+                              GridPane.columnIndex="0" GridPane.rowIndex="2">
+                            <children>
+                                <Label text="Meet" textFill="white" style="-fx-font-size: 18;" />
+                                <Label text="POOZ TD" textFill="white" style="-fx-font-size: 16; -fx-font-weight: bold;" />
+                                <Label text="17:45" textFill="white" style="-fx-font-size: 14; -fx-font-weight: bold;" />
+                                <Label text="h:30min" textFill="#cccccc" style="-fx-font-size: 12;" />
+                            </children>
+                        </VBox>
+                        
+                        <!-- Sport section -->
+                        <VBox style="-fx-background-color: #353535; -fx-background-radius: 10; -fx-padding: 10;" 
+                              GridPane.columnIndex="1" GridPane.rowIndex="2">
+                            <children>
+                                <Label text="Sport" textFill="white" style="-fx-font-size: 18;" />
+                                <Label text="triceps" textFill="white" style="-fx-font-size: 16; -fx-font-weight: bold;" />
+                                <Label text="20:45" textFill="white" style="-fx-font-size: 14; -fx-font-weight: bold;" />
+                                <Label text="2h" textFill="#cccccc" style="-fx-font-size: 12;" />
+                            </children>
+                        </VBox>
+                        
+                        <!-- Progress section -->
+                        <StackPane style="-fx-background-color: #353535; -fx-background-radius: 10;" 
+                                  GridPane.columnIndex="2" GridPane.rowIndex="2" GridPane.rowSpan="3">
+                            <children>
+                                <VBox alignment="CENTER" spacing="10">
+                                    <children>
+                                        <Label text="Your" textFill="#cccccc" style="-fx-font-size: 24;" />
+                                        <Label text="progres" textFill="#cccccc" style="-fx-font-size: 24;" />
+                                        <StackPane>
+                                            <children>
+                                                <Label text="94%" textFill="white" style="-fx-font-size: 36; -fx-font-weight: bold;" />
+                                            </children>
+                                        </StackPane>
+                                    </children>
+                                </VBox>
+                            </children>
+                        </StackPane>
+                        
+                        <!-- Meet Project POOZ -->
+                        <VBox style="-fx-background-color: #353535; -fx-background-radius: 10; -fx-padding: 10;" 
+                              GridPane.columnIndex="0" GridPane.rowIndex="3">
+                            <children>
+                                <Label text="Meet" textFill="white" style="-fx-font-size: 18;" />
+                                <Label text="Projet POOZ" textFill="white" style="-fx-font-size: 16; -fx-font-weight: bold;" />
+                                <Label text="23:45" textFill="white" style="-fx-font-size: 14; -fx-font-weight: bold;" />
+                                <Label text="2h:30min" textFill="#cccccc" style="-fx-font-size: 12;" />
+                            </children>
+                        </VBox>
+                        
+                        <!-- Salat icha -->
+                        <VBox style="-fx-background-color: #353535; -fx-background-radius: 10; -fx-padding: 10;" 
+                              GridPane.columnIndex="1" GridPane.rowIndex="3">
+                            <children>
+                                <Label text="Salat" textFill="white" style="-fx-font-size: 18;" />
+                                <Label text="icha" textFill="white" style="-fx-font-size: 16; -fx-font-weight: bold;" />
+                                <Label text="22:45" textFill="white" style="-fx-font-size: 14; -fx-font-weight: bold;" />
+                                <Label text="30min" textFill="#cccccc" style="-fx-font-size: 12;" />
+                            </children>
+                        </VBox>
+                        
+                        <!-- Meet POOZ -->
+                        <VBox style="-fx-background-color: #353535; -fx-background-radius: 10; -fx-padding: 10;" 
+                              GridPane.columnIndex="0" GridPane.rowIndex="4">
+                            <children>
+                                <Label text="Meet" textFill="white" style="-fx-font-size: 18;" />
+                                <Label text="POOZ" textFill="white" style="-fx-font-size: 16; -fx-font-weight: bold;" />
+                                <Label text="17:45" textFill="white" style="-fx-font-size: 14; -fx-font-weight: bold;" />
+                                <Label text="1h:30min" textFill="#cccccc" style="-fx-font-size: 12;" />
+                            </children>
+                        </VBox>
+                        
+                        <!-- Add button -->
+                        <StackPane style="-fx-background-color: #353535; -fx-background-radius: 10;" 
+                                  GridPane.columnIndex="1" GridPane.rowIndex="4">
+                            <children>
+                                <Label text="+" textFill="#cccccc" style="-fx-font-size: 36;" />
+                            </children>
+                        </StackPane>
+                        
+                    </GridPane>
+                </children>
+            </VBox>
+            
+            <!-- Right panel - Task List -->
+            <VBox alignment="CENTER_RIGHT" style="-fx-padding: 0;">
+                <children>
+                    <StackPane style="-fx-background-color: #1e1e1e; -fx-min-width: 250; -fx-max-width: 250; -fx-min-height: 600;">
+                        <children>
+                            <VBox spacing="10" style="-fx-padding: 10;">
+                                <children>
+                                    <Label text="Your tasks" textFill="white" style="-fx-font-size: 20; -fx-font-weight: bold;">
+                                        <VBox.margin>
+                                            <Insets bottom="10" />
+                                        </VBox.margin>
+                                    </Label>
+                                    
+                                    <!-- Task 1 -->
+                                    <HBox style="-fx-background-color: #ffffff; -fx-background-radius: 5; -fx-padding: 10;" spacing="10">
+                                        <children>
+                                            <VBox HBox.hgrow="ALWAYS">
+                                                <children>
+                                                    <Label text="Your task" style="-fx-font-weight: bold;" />
+                                                    <Label text="14:30" style="-fx-font-size: 12;" />
+                                                    <Label text="30min" style="-fx-font-size: 12;" />
+                                                </children>
+                                            </VBox>
+                                        </children>
+                                    </HBox>
+                                    
+                                    <!-- Task 2 -->
+                                    <HBox style="-fx-background-color: #ffffff; -fx-background-radius: 5; -fx-padding: 10;" spacing="10">
+                                        <children>
+                                            <VBox HBox.hgrow="ALWAYS">
+                                                <children>
+                                                    <Label text="Your task" style="-fx-font-weight: bold;" />
+                                                    <Label text="10:50" style="-fx-font-size: 12;" />
+                                                    <Label text="30min" style="-fx-font-size: 12;" />
+                                                </children>
+                                            </VBox>
+                                        </children>
+                                    </HBox>
+                                    
+                                    <!-- Task 3 -->
+                                    <HBox style="-fx-background-color: #ffffff; -fx-background-radius: 5; -fx-padding: 10;" spacing="10">
+                                        <children>
+                                            <VBox HBox.hgrow="ALWAYS">
+                                                <children>
+                                                    <Label text="Your task" style="-fx-font-weight: bold;" />
+                                                    <Label text="8:30" style="-fx-font-size: 12;" />
+                                                    <Label text="30min" style="-fx-font-size: 12;" />
+                                                </children>
+                                            </VBox>
+                                        </children>
+                                    </HBox>
+                                    
+                                    <!-- Task 4 -->
+                                    <HBox style="-fx-background-color: #ffffff; -fx-background-radius: 5; -fx-padding: 10;" spacing="10">
+                                        <children>
+                                            <VBox HBox.hgrow="ALWAYS">
+                                                <children>
+                                                    <Label text="Your task" style="-fx-font-weight: bold;" />
+                                                    <Label text="16:00" style="-fx-font-size: 12;" />
+                                                    <Label text="30min" style="-fx-font-size: 12;" />
+                                                </children>
+                                            </VBox>
+                                        </children>
+                                    </HBox>
+                                    
+                                    <!-- Task 5 -->
+                                    <HBox style="-fx-background-color: #ffffff; -fx-background-radius: 5; -fx-padding: 10;" spacing="10">
+                                        <children>
+                                            <VBox HBox.hgrow="ALWAYS">
+                                                <children>
+                                                    <Label text="Your task" style="-fx-font-weight: bold;" />
+                                                    <Label text="17:30" style="-fx-font-size: 12;" />
+                                                    <Label text="30min" style="-fx-font-size: 12;" />
+                                                </children>
+                                            </VBox>
+                                        </children>
+                                    </HBox>
+                                    
+                                    <!-- Create Task Button -->
+                                    <StackPane style="-fx-background-color: #c8ff00; -fx-background-radius: 5; -fx-padding: 15;">
+                                        <children>
+                                            <HBox alignment="CENTER" spacing="10">
+                                                <children>
+                                                    <Label text="+" style="-fx-font-size: 20; -fx-font-weight: bold;" />
+                                                    <Label text="Create Task" style="-fx-font-size: 14; -fx-font-weight: bold;" />
+                                                </children>
+                                            </HBox>
+                                        </children>
+                                    </StackPane>
+                                </children>
+                            </VBox>
+                        </children>
+                    </StackPane>
+                </children>
+            </VBox>
+        </StackPane>
+    </center>
+</BorderPane>

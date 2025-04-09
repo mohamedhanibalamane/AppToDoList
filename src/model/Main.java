@@ -19,7 +19,7 @@ public class Main extends Application {
 	public void start(Stage stage) {
 		try {
 
-			Parent root = FXMLLoader.load(getClass().getResource("/vue/A.fxml"));
+			Parent root = FXMLLoader.load(getClass().getResource("/vue/HomeUser.fxml"));
 			Scene scene = new Scene(root);
 			Image icon = new Image("to_doo.jpg");
 			stage.getIcons().add(icon);
