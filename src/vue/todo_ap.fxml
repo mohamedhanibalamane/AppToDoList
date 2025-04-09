@@ -1,0 +1,642 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Region?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1">
+    <!-- Structure principale avec barre latérale à gauche et contenu principal à droite -->
+    <left>
+        <!-- Barre latérale de navigation -->
+        <VBox prefWidth="180" style="-fx-background-color: #000000;">
+            <!-- Titre de l'application -->
+            <Label text="to-do-liste" textFill="WHITE">
+                <font>
+                    <Font name="System Bold" size="24" />
+                </font>
+                <padding>
+                    <Insets bottom="30" left="20" right="20" top="20" />
+                </padding>
+            </Label>
+            
+            <!-- Éléments de navigation -->
+            <HBox alignment="CENTER_LEFT" spacing="10">
+                <padding>
+                    <Insets bottom="10" left="20" right="20" top="10" />
+                </padding>
+                <ImageView fitHeight="20" fitWidth="20" preserveRatio="true">
+                    <Image url="@dashboard_icon.png" />
+                </ImageView>
+                <Label text="Dashboard" textFill="WHITE" />
+            </HBox>
+            
+            <HBox alignment="CENTER_LEFT" spacing="10">
+                <padding>
+                    <Insets bottom="10" left="20" right="20" top="10" />
+                </padding>
+                <ImageView fitHeight="20" fitWidth="20" preserveRatio="true">
+                    <Image url="@progress_icon.png" />
+                </ImageView>
+                <Label text="Progres" textFill="WHITE" />
+            </HBox>
+            
+            <HBox alignment="CENTER_LEFT" spacing="10">
+                <padding>
+                    <Insets bottom="10" left="20" right="20" top="10" />
+                </padding>
+                <ImageView fitHeight="20" fitWidth="20" preserveRatio="true">
+                    <Image url="@history_icon.png" />
+                </ImageView>
+                <Label text="History" textFill="WHITE" />
+            </HBox>
+            
+            <HBox alignment="CENTER_LEFT" spacing="10">
+                <padding>
+                    <Insets bottom="10" left="20" right="20" top="10" />
+                </padding>
+                <ImageView fitHeight="20" fitWidth="20" preserveRatio="true">
+                    <Image url="@corbay_icon.png" />
+                </ImageView>
+                <Label text="Corbay" textFill="WHITE" />
+            </HBox>
+            
+            <HBox alignment="CENTER_LEFT" spacing="10">
+                <padding>
+                    <Insets bottom="10" left="20" right="20" top="10" />
+                </padding>
+                <ImageView fitHeight="20" fitWidth="20" preserveRatio="true">
+                    <Image url="@tasks_icon.png" />
+                </ImageView>
+                <Label text="Your tasks" textFill="WHITE" />
+            </HBox>
+            
+            <Region VBox.vgrow="ALWAYS" />
+            
+            <HBox alignment="CENTER_LEFT" spacing="10">
+                <padding>
+                    <Insets bottom="10" left="20" right="20" top="10" />
+                </padding>
+                <ImageView fitHeight="20" fitWidth="20" preserveRatio="true">
+                    <Image url="@logout_icon.png" />
+                </ImageView>
+                <Label text="Logout" textFill="WHITE" />
+            </HBox>
+        </VBox>
+    </left>
+    
+    <center>
+        <!-- Contenu principal -->
+        <VBox>
+            <!-- En-tête avec image de fond -->
+            <StackPane>
+                <!-- Image de fond (nuages roses) -->
+                <ImageView fitWidth="800" preserveRatio="true">
+                    <Image url="@images/background.jpg" />
+                </ImageView>
+                
+                <!-- Texte de bienvenue -->
+                <VBox alignment="CENTER_LEFT">
+                    <padding>
+                        <Insets bottom="20" left="30" top="20" />
+                    </padding>
+                    <Label text="Hello Moh !" textFill="BLACK">
+                        <font>
+                            <Font name="System Bold" size="36" />
+                        </font>
+                    </Label>
+                    <Label text="It's good to see you again." textFill="BLACK">
+                        <font>
+                            <Font size="16" />
+                        </font>
+                    </Label>
+                </VBox>
+            </StackPane>
+            
+            <!-- Contenu principal avec cartes et liste de tâches -->
+            <HBox spacing="15">
+                <padding>
+                    <Insets bottom="15" left="15" right="15" top="15" />
+                </padding>
+                
+                <!-- Colonne gauche avec cartes de tâches et statistiques -->
+                <VBox spacing="15" HBox.hgrow="ALWAYS">
+                    <!-- Première ligne de cartes -->
+                    <HBox spacing="15">
+                        <!-- Carte "Your task" -->
+                        <StackPane style="-fx-background-color: #444444; -fx-background-radius: 10;" HBox.hgrow="ALWAYS">
+                            <padding>
+                                <Insets bottom="15" left="15" right="15" top="15" />
+                            </padding>
+                            <HBox alignment="CENTER_LEFT" spacing="10">
+                                <VBox>
+                                    <Label text="Your task" textFill="WHITE">
+                                        <font>
+                                            <Font name="System Bold" size="18" />
+                                        </font>
+                                    </Label>
+                                    <Label text="doing new" textFill="WHITE">
+                                        <font>
+                                            <Font size="14" />
+                                        </font>
+                                    </Label>
+                                </VBox>
+                                <Region HBox.hgrow="ALWAYS" />
+                                <VBox alignment="CENTER_RIGHT">
+                                    <Label text="14:30" textFill="WHITE">
+                                        <font>
+                                            <Font name="System Bold" size="18" />
+                                        </font>
+                                    </Label>
+                                    <Label text="30min" textFill="WHITE">
+                                        <font>
+                                            <Font size="14" />
+                                        </font>
+                                    </Label>
+                                </VBox>
+                            </HBox>
+                        </StackPane>
+                        
+                        <!-- Carte "Tasks Done" -->
+                        <StackPane prefWidth="150" style="-fx-background-color: #444444; -fx-background-radius: 10;">
+                            <padding>
+                                <Insets bottom="15" left="15" right="15" top="15" />
+                            </padding>
+                            <VBox alignment="CENTER">
+                                <Label text="36" textFill="WHITE">
+                                    <font>
+                                        <Font name="System Bold" size="24" />
+                                    </font>
+                                </Label>
+                                <Label text="Tasks Done" textFill="WHITE">
+                                    <font>
+                                        <Font size="14" />
+                                    </font>
+                                </Label>
+                                <ImageView fitHeight="24" fitWidth="24" preserveRatio="true">
+                                    <Image url="@check_icon.png" />
+                                </ImageView>
+                            </VBox>
+                        </StackPane>
+                        
+                        <!-- Carte "Tasks filed" -->
+                        <StackPane prefWidth="150" style="-fx-background-color: #AA3333; -fx-background-radius: 10;">
+                            <padding>
+                                <Insets bottom="15" left="15" right="15" top="15" />
+                            </padding>
+                            <VBox alignment="CENTER">
+                                <Label text="12" textFill="WHITE">
+                                    <font>
+                                        <Font name="System Bold" size="24" />
+                                    </font>
+                                </Label>
+                                <Label text="Tasks filed" textFill="WHITE">
+                                    <font>
+                                        <Font size="14" />
+                                    </font>
+                                </Label>
+                                <ImageView fitHeight="24" fitWidth="24" preserveRatio="true">
+                                    <Image url="@x_icon.png" />
+                                </ImageView>
+                            </VBox>
+                        </StackPane>
+                    </HBox>
+                    
+                    <!-- Deuxième ligne de cartes -->
+                    <HBox spacing="15">
+                        <!-- Carte "this day" -->
+                        <StackPane prefWidth="200" style="-fx-background-color: #444444; -fx-background-radius: 10;">
+                            <padding>
+                                <Insets bottom="15" left="15" right="15" top="15" />
+                            </padding>
+                            <VBox alignment="CENTER">
+                                <Label text="this" textFill="WHITE">
+                                    <font>
+                                        <Font size="18" />
+                                    </font>
+                                </Label>
+                                <Label text="day" textFill="WHITE">
+                                    <font>
+                                        <Font name="System Bold" size="24" />
+                                    </font>
+                                </Label>
+                            </VBox>
+                        </StackPane>
+                        
+                        <!-- Carte "coines" -->
+                        <StackPane prefWidth="200" style="-fx-background-color: #444444; -fx-background-radius: 10;">
+                            <padding>
+                                <Insets bottom="15" left="15" right="15" top="15" />
+                            </padding>
+                            <VBox alignment="CENTER">
+                                <Label text="coines" textFill="WHITE">
+                                    <font>
+                                        <Font size="18" />
+                                    </font>
+                                </Label>
+                                <Label text="2057c" textFill="WHITE">
+                                    <font>
+                                        <Font name="System Bold" size="24" />
+                                    </font>
+                                </Label>
+                            </VBox>
+                        </StackPane>
+                        
+                        <!-- Carte de progression -->
+                        <StackPane style="-fx-background-color: #444444; -fx-background-radius: 10;" HBox.hgrow="ALWAYS">
+                            <padding>
+                                <Insets bottom="15" left="15" right="15" top="15" />
+                            </padding>
+                            <VBox alignment="CENTER">
+                                <Label text="Your" textFill="WHITE">
+                                    <font>
+                                        <Font size="18" />
+                                    </font>
+                                </Label>
+                                <Label text="progres" textFill="WHITE">
+                                    <font>
+                                        <Font size="18" />
+                                    </font>
+                                </Label>
+                                <Label text="94%" textFill="WHITE">
+                                    <font>
+                                        <Font name="System Bold" size="36" />
+                                    </font>
+                                </Label>
+                                <!-- Cercle de progression (simulé) -->
+                                <StackPane />
+                            </VBox>
+                        </StackPane>
+                    </HBox>
+                    
+                    <!-- Troisième ligne de cartes -->
+                    <HBox spacing="15">
+                        <!-- Carte "Meet POO2 TD" -->
+                        <StackPane style="-fx-background-color: #444444; -fx-background-radius: 10;" HBox.hgrow="ALWAYS">
+                            <padding>
+                                <Insets bottom="15" left="15" right="15" top="15" />
+                            </padding>
+                            <VBox>
+                                <Label text="Meet" textFill="WHITE">
+                                    <font>
+                                        <Font name="System Bold" size="18" />
+                                    </font>
+                                </Label>
+                                <Label text="POO2 TD" textFill="WHITE">
+                                    <font>
+                                        <Font size="14" />
+                                    </font>
+                                </Label>
+                                <Region VBox.vgrow="ALWAYS" />
+                                <HBox>
+                                    <Label text="17:45" textFill="WHITE">
+                                        <font>
+                                            <Font name="System Bold" size="16" />
+                                        </font>
+                                    </Label>
+                                    <Region HBox.hgrow="ALWAYS" />
+                                    <Label text="h30min" textFill="WHITE">
+                                        <font>
+                                            <Font size="14" />
+                                        </font>
+                                    </Label>
+                                </HBox>
+                            </VBox>
+                        </StackPane>
+                        
+                        <!-- Carte "Sport triceps/pole" -->
+                        <StackPane style="-fx-background-color: #444444; -fx-background-radius: 10;" HBox.hgrow="ALWAYS">
+                            <padding>
+                                <Insets bottom="15" left="15" right="15" top="15" />
+                            </padding>
+                            <VBox>
+                                <Label text="Sport" textFill="WHITE">
+                                    <font>
+                                        <Font name="System Bold" size="18" />
+                                    </font>
+                                </Label>
+                                <Label text="triceps/pole" textFill="WHITE">
+                                    <font>
+                                        <Font size="14" />
+                                    </font>
+                                </Label>
+                                <Region VBox.vgrow="ALWAYS" />
+                                <HBox>
+                                    <Label text="20:45" textFill="WHITE">
+                                        <font>
+                                            <Font name="System Bold" size="16" />
+                                        </font>
+                                    </Label>
+                                    <Region HBox.hgrow="ALWAYS" />
+                                    <Label text="2h" textFill="WHITE">
+                                        <font>
+                                            <Font size="14" />
+                                        </font>
+                                    </Label>
+                                </HBox>
+                            </VBox>
+                        </StackPane>
+                    </HBox>
+                    
+                    <!-- Quatrième ligne de cartes -->
+                    <HBox spacing="15">
+                        <!-- Carte "Meet Projet POO2" -->
+                        <StackPane style="-fx-background-color: #444444; -fx-background-radius: 10;" HBox.hgrow="ALWAYS">
+                            <padding>
+                                <Insets bottom="15" left="15" right="15" top="15" />
+                            </padding>
+                            <VBox>
+                                <Label text="Meet" textFill="WHITE">
+                                    <font>
+                                        <Font name="System Bold" size="18" />
+                                    </font>
+                                </Label>
+                                <Label text="Projet POO2" textFill="WHITE">
+                                    <font>
+                                        <Font size="14" />
+                                    </font>
+                                </Label>
+                                <Region VBox.vgrow="ALWAYS" />
+                                <HBox>
+                                    <Label text="23:45" textFill="WHITE">
+                                        <font>
+                                            <Font name="System Bold" size="16" />
+                                        </font>
+                                    </Label>
+                                    <Region HBox.hgrow="ALWAYS" />
+                                    <Label text="2h30min" textFill="WHITE">
+                                        <font>
+                                            <Font size="14" />
+                                        </font>
+                                    </Label>
+                                </HBox>
+                            </VBox>
+                        </StackPane>
+                        
+                        <!-- Carte "Salat Icha" -->
+                        <StackPane style="-fx-background-color: #444444; -fx-background-radius: 10;" HBox.hgrow="ALWAYS">
+                            <padding>
+                                <Insets bottom="15" left="15" right="15" top="15" />
+                            </padding>
+                            <VBox>
+                                <Label text="Salat" textFill="WHITE">
+                                    <font>
+                                        <Font name="System Bold" size="18" />
+                                    </font>
+                                </Label>
+                                <Label text="Icha" textFill="WHITE">
+                                    <font>
+                                        <Font size="14" />
+                                    </font>
+                                </Label>
+                                <Region VBox.vgrow="ALWAYS" />
+                                <HBox>
+                                    <Label text="22:45" textFill="WHITE">
+                                        <font>
+                                            <Font name="System Bold" size="16" />
+                                        </font>
+                                    </Label>
+                                    <Region HBox.hgrow="ALWAYS" />
+                                    <Label text="30min" textFill="WHITE">
+                                        <font>
+                                            <Font size="14" />
+                                        </font>
+                                    </Label>
+                                </HBox>
+                            </VBox>
+                        </StackPane>
+                    </HBox>
+                    
+                    <!-- Cinquième ligne de cartes -->
+                    <HBox spacing="15">
+                        <!-- Carte "Meet POO2" -->
+                        <StackPane style="-fx-background-color: #444444; -fx-background-radius: 10;" HBox.hgrow="ALWAYS">
+                            <padding>
+                                <Insets bottom="15" left="15" right="15" top="15" />
+                            </padding>
+                            <VBox>
+                                <Label text="Meet" textFill="WHITE">
+                                    <font>
+                                        <Font name="System Bold" size="18" />
+                                    </font>
+                                </Label>
+                                <Label text="POO2" textFill="WHITE">
+                                    <font>
+                                        <Font size="14" />
+                                    </font>
+                                </Label>
+                                <Region VBox.vgrow="ALWAYS" />
+                                <HBox>
+                                    <Label text="17:45" textFill="WHITE">
+                                        <font>
+                                            <Font name="System Bold" size="16" />
+                                        </font>
+                                    </Label>
+                                    <Region HBox.hgrow="ALWAYS" />
+                                    <Label text="h30min" textFill="WHITE">
+                                        <font>
+                                            <Font size="14" />
+                                        </font>
+                                    </Label>
+                                </HBox>
+                            </VBox>
+                        </StackPane>
+                        
+                        <!-- Carte "+" (Ajouter) -->
+                        <StackPane style="-fx-background-color: #444444; -fx-background-radius: 10;" HBox.hgrow="ALWAYS">
+                            <padding>
+                                <Insets bottom="15" left="15" right="15" top="15" />
+                            </padding>
+                            <Label text="+" textFill="WHITE">
+                                <font>
+                                    <Font name="System Bold" size="36" />
+                                </font>
+                            </Label>
+                        </StackPane>
+                    </HBox>
+                </VBox>
+                
+                <!-- Colonne droite avec liste de tâches -->
+                <VBox prefWidth="250" style="-fx-background-color: #333333; -fx-background-radius: 10;">
+                    <padding>
+                        <Insets bottom="15" left="15" right="15" top="15" />
+                    </padding>
+                    
+                    <!-- En-tête de la liste -->
+                    <Label text="Your tasks" textFill="WHITE">
+                        <font>
+                            <Font name="System Bold" size="18" />
+                        </font>
+                    </Label>
+                    
+                    <!-- Liste des tâches -->
+                    <VBox spacing="10" VBox.vgrow="ALWAYS">
+                        <padding>
+                            <Insets top="10" />
+                        </padding>
+                        
+                        <!-- Tâche 1 -->
+                        <StackPane style="-fx-background-color: #FFFFFF; -fx-background-radius: 10;">
+                            <padding>
+                                <Insets bottom="10" left="10" right="10" top="10" />
+                            </padding>
+                            <HBox alignment="CENTER_LEFT" spacing="10">
+                                <Label text="Your task" textFill="BLACK">
+                                    <font>
+                                        <Font size="14" />
+                                    </font>
+                                </Label>
+                                <Region HBox.hgrow="ALWAYS" />
+                                <VBox alignment="CENTER_RIGHT">
+                                    <Label text="14:30" textFill="BLACK">
+                                        <font>
+                                            <Font size="12" />
+                                        </font>
+                                    </Label>
+                                    <Label text="30min" textFill="BLACK">
+                                        <font>
+                                            <Font size="12" />
+                                        </font>
+                                    </Label>
+                                </VBox>
+                            </HBox>
+                        </StackPane>
+                        
+                        <!-- Tâche 2 -->
+                        <StackPane style="-fx-background-color: #FFFFFF; -fx-background-radius: 10;">
+                            <padding>
+                                <Insets bottom="10" left="10" right="10" top="10" />
+                            </padding>
+                            <HBox alignment="CENTER_LEFT" spacing="10">
+                                <Label text="Your task" textFill="BLACK">
+                                    <font>
+                                        <Font size="14" />
+                                    </font>
+                                </Label>
+                                <Region HBox.hgrow="ALWAYS" />
+                                <VBox alignment="CENTER_RIGHT">
+                                    <Label text="10:50" textFill="BLACK">
+                                        <font>
+                                            <Font size="12" />
+                                        </font>
+                                    </Label>
+                                    <Label text="30min" textFill="BLACK">
+                                        <font>
+                                            <Font size="12" />
+                                        </font>
+                                    </Label>
+                                </VBox>
+                            </HBox>
+                        </StackPane>
+                        
+                        <!-- Tâche 3 -->
+                        <StackPane style="-fx-background-color: #FFFFFF; -fx-background-radius: 10;">
+                            <padding>
+                                <Insets bottom="10" left="10" right="10" top="10" />
+                            </padding>
+                            <HBox alignment="CENTER_LEFT" spacing="10">
+                                <Label text="Your task" textFill="BLACK">
+                                    <font>
+                                        <Font size="14" />
+                                    </font>
+                                </Label>
+                                <Region HBox.hgrow="ALWAYS" />
+                                <VBox alignment="CENTER_RIGHT">
+                                    <Label text="4:30" textFill="BLACK">
+                                        <font>
+                                            <Font size="12" />
+                                        </font>
+                                    </Label>
+                                    <Label text="30min" textFill="BLACK">
+                                        <font>
+                                            <Font size="12" />
+                                        </font>
+                                    </Label>
+                                </VBox>
+                            </HBox>
+                        </StackPane>
+                        
+                        <!-- Tâche 4 -->
+                        <StackPane style="-fx-background-color: #FFFFFF; -fx-background-radius: 10;">
+                            <padding>
+                                <Insets bottom="10" left="10" right="10" top="10" />
+                            </padding>
+                            <HBox alignment="CENTER_LEFT" spacing="10">
+                                <Label text="Your task" textFill="BLACK">
+                                    <font>
+                                        <Font size="14" />
+                                    </font>
+                                </Label>
+                                <Region HBox.hgrow="ALWAYS" />
+                                <VBox alignment="CENTER_RIGHT">
+                                    <Label text="15:00" textFill="BLACK">
+                                        <font>
+                                            <Font size="12" />
+                                        </font>
+                                    </Label>
+                                    <Label text="30min" textFill="BLACK">
+                                        <font>
+                                            <Font size="12" />
+                                        </font>
+                                    </Label>
+                                </VBox>
+                            </HBox>
+                        </StackPane>
+                        
+                        <!-- Tâche 5 -->
+                        <StackPane style="-fx-background-color: #FFFFFF; -fx-background-radius: 10;">
+                            <padding>
+                                <Insets bottom="10" left="10" right="10" top="10" />
+                            </padding>
+                            <HBox alignment="CENTER_LEFT" spacing="10">
+                                <Label text="Your task" textFill="BLACK">
+                                    <font>
+                                        <Font size="14" />
+                                    </font>
+                                </Label>
+                                <Region HBox.hgrow="ALWAYS" />
+                                <VBox alignment="CENTER_RIGHT">
+                                    <Label text="17:30" textFill="BLACK">
+                                        <font>
+                                            <Font size="12" />
+                                        </font>
+                                    </Label>
+                                    <Label text="30min" textFill="BLACK">
+                                        <font>
+                                            <Font size="12" />
+                                        </font>
+                                    </Label>
+                                </VBox>
+                            </HBox>
+                        </StackPane>
+                        
+                        <!-- Bouton d'ajout de tâche -->
+                        <StackPane style="-fx-background-color: #CCFF00; -fx-background-radius: 10;">
+                            <padding>
+                                <Insets bottom="15" left="15" right="15" top="15" />
+                            </padding>
+                            <Label text="+" textFill="BLACK">
+                                <font>
+                                    <Font name="System Bold" size="24" />
+                                </font>
+                            </Label>
+                        </StackPane>
+                        
+                        <!-- Texte "Create Task" -->
+                        <Label alignment="CENTER" text="Create Task" textFill="WHITE">
+                            <font>
+                                <Font name="System Bold" size="16" />
+                            </font>
+                        </Label>
+                    </VBox>
+                </VBox>
+            </HBox>
+        </VBox>
+    </center>
+</BorderPane>
