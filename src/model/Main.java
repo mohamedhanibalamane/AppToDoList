@@ -8,6 +8,7 @@ import javafx.scene.Scene;
 import javafx.scene.control.Alert;
 import javafx.scene.control.ButtonType;
 import javafx.scene.control.Alert.AlertType;
+import javafx.scene.image.Image;
 import vue.*;
 import controller.*; 
 public class Main extends Application {
@@ -20,7 +21,8 @@ public class Main extends Application {
 
 			Parent root = FXMLLoader.load(getClass().getResource("/vue/A.fxml"));
 			Scene scene = new Scene(root);
-			
+			Image icon = new Image("to_doo.jpg");
+			stage.getIcons().add(icon);
 			
 			stage.setScene(scene);
 			stage.show();
