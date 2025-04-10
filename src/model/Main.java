@@ -20,7 +20,7 @@ public class Main extends Application {
 		try {
 
 			Parent root = FXMLLoader.load(getClass().getResource("/vue/todo_ap.fxml"));
-			Scene scene = new Scene(root);
+			Scene scene = new Scene(root, 800, 600);
 			Image icon = new Image("to_doo.jpg");
 			stage.getIcons().add(icon);
 			
