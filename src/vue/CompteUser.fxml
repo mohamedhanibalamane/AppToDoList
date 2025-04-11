@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Hyperlink?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+
+<HBox prefHeight="468.0" prefWidth="759.0" spacing="20" style="-fx-background-color: #f0f8ff; -fx-padding: 20;" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1">
+    
+    <!-- Partie gauche (formulaire de connexion) -->
+    <VBox prefHeight="428.0" prefWidth="505.0" style="-fx-background-color: #d0e5ff; -fx-padding: 30;" HBox.hgrow="ALWAYS">
+        <VBox alignment="CENTER" maxWidth="600" spacing="25" style="-fx-padding: 20;">
+            <!-- Titre CONNEXION -->
+            <Label style="-fx-font-size: 24px; -fx-font-weight: bold; -fx-text-fill: #333333;" text="CONNEXION" />
+            
+            <!-- Zone des champs de saisie -->
+            <VBox alignment="CENTER" spacing="15" style="-fx-padding: 30 40; -fx-background-color: #e6f2ff; -fx-background-radius: 8; -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.1), 5, 0, 0, 2);">
+                <!-- Champ Email -->
+                <TextField promptText="Email" style="-fx-pref-width: 280px; -fx-pref-height: 40px; -fx-background-radius: 4px; -fx-border-color: #b3d1ff; -fx-border-radius: 4px; -fx-padding: 0 10px; -fx-font-size: 14px; -fx-background-color: white;" />
+                
+                <!-- Champ Mot de passe -->
+                <PasswordField promptText="Mot de passe" style="-fx-pref-width: 280px; -fx-pref-height: 40px; -fx-background-radius: 4px; -fx-border-color: #b3d1ff; -fx-border-radius: 4px; -fx-padding: 0 10px; -fx-font-size: 14px; -fx-background-color: white;" />
+            </VBox>
+            
+            <!-- Bouton de connexion -->
+            <Button style="-fx-font-weight: bold; -fx-background-color: #4285f4; -fx-text-fill: white; -fx-pref-width: 280px; -fx-pref-height: 40px; -fx-background-radius: 4px; -fx-font-size: 14px; -fx-effect: dropshadow(three-pass-box, rgba(66,133,244,0.3), 5, 0, 0, 1);" text="SE CONNECTER" />
+            
+            <!-- Lien Créer un compte -->
+            <HBox alignment="CENTER" spacing="5">
+                <Label style="-fx-text-fill: #666666; -fx-font-size: 13px;" text="Nouveau ici ?" />
+                <Hyperlink style="-fx-text-fill: #4285f4; -fx-font-size: 13px; -fx-border-width: 0; -fx-underline: false;" text="Créer un compte" />
+            </HBox>
+        </VBox>
+    </VBox>
+    
+    <!-- Partie droite (message de bienvenue) -->
+    <VBox alignment="CENTER" maxWidth="400" prefHeight="428.0" prefWidth="308.0" style="-fx-background-color: #e6f2ff; -fx-padding: 20;">
+        <Label prefHeight="280.0" prefWidth="230.0" style="             -fx-font-size: 28px;             -fx-font-weight: bold;             -fx-text-fill: #4285f4;             -fx-wrap-text: true;             -fx-alignment: center;             -fx-text-alignment: center;             -fx-padding: 20;             -fx-max-width: 300;         " text="Bienvenue Sur Notre Application &quot;TO DO LISTE&quot;" />
+    </VBox>
+</HBox>
