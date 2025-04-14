@@ -24,6 +24,7 @@ public class Main extends Application {
 			Image icon = new Image("to_doo.jpg");
 			stage.getIcons().add(icon);
 			
+			
 			stage.setScene(scene);
 			stage.show();
 			
