@@ -21,7 +21,7 @@ public class Main extends Application {
 
 			Parent root = FXMLLoader.load(getClass().getResource("/vue/Task.fxml"));
 			Scene scene = new Scene(root, 800, 600);
-			Image icon = new Image("to_doo.jpg");
+			Image icon = new Image("ToDo (2).png");
 			stage.getIcons().add(icon);
 			
 			
