@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+
+<BorderPane style="-fx-background-color: #f5f5f5;" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1">
+    <top>
+        <VBox alignment="CENTER" style="-fx-background-color: #8AC5D2; -fx-padding: 25; -fx-background-radius: 0 0 15 15;">
+            <Label style="-fx-font-size: 32px; -fx-font-weight: bold; -fx-text-fill: white; -fx-font-family: 'Arial';" text="Corbay" />
+        </VBox>
+    </top>
+    
+    <center>
+        <ScrollPane fitToWidth="true" hbarPolicy="NEVER" prefWidth="810.0" style="-fx-background: transparent; -fx-background-color: #8AC5D2; -fx-border-width: 0; -fx-padding: 10;">
+            <VBox alignment="CENTER" spacing="15" style="-fx-padding: 20; -fx-background-color: #8AC5D2; -fx-min-width: 800;">
+                
+                <!-- Tâches 1 à 7 -->
+                <VBox fx:id="task1" alignment="CENTER" style="-fx-background-color: #268396; -fx-border-color: #e0e0e0; -fx-border-width: 1; -fx-background-radius: 10; -fx-border-radius: 10; -fx-padding: 20; -fx-min-width: 750;">
+                    <HBox alignment="CENTER" spacing="100">
+                        <VBox alignment="CENTER_LEFT" spacing="5">
+                            <Button fx:id="taskTitle1" style="-fx-font-weight: bold; -fx-font-size: 18px; -fx-background-color: transparent; -fx-border-width: 0; -fx-text-fill: white;" text="Your task" />
+                            <Button fx:id="taskState1" style="-fx-text-fill: white; -fx-background-color: transparent; -fx-border-width: 0;" text="State" />
+                        </VBox>
+                        <VBox alignment="CENTER_RIGHT" spacing="5">
+                            <Button fx:id="taskDate1" style="-fx-text-fill: white; -fx-background-color: transparent; -fx-border-width: 0;" text="12-10-2024" />
+                            <Button fx:id="taskTime1" style="-fx-text-fill: white; -fx-background-color: transparent; -fx-border-width: 0;" text="14:30" />
+                        </VBox>
+                    </HBox>
+                </VBox>
+
+                <VBox fx:id="task2" alignment="CENTER" style="-fx-background-color: #268396; -fx-border-color: #e0e0e0; -fx-border-width: 1; -fx-background-radius: 10; -fx-border-radius: 10; -fx-padding: 20; -fx-min-width: 750;">
+                    <HBox alignment="CENTER" spacing="100">
+                        <VBox alignment="CENTER_LEFT" spacing="5">
+                            <Button fx:id="taskTitle2" style="-fx-font-weight: bold; -fx-font-size: 18px; -fx-background-color: transparent; -fx-border-width: 0; -fx-text-fill: white;" text="Your task" />
+                            <Button fx:id="taskState2" style="-fx-text-fill: white; -fx-background-color: transparent; -fx-border-width: 0;" text="State" />
+                        </VBox>
+                        <VBox alignment="CENTER_RIGHT" spacing="5">
+                            <Button fx:id="taskDate2" style="-fx-text-fill: white; -fx-background-color: transparent; -fx-border-width: 0;" text="12-10-2024" />
+                            <Button fx:id="taskTime2" style="-fx-text-fill: white; -fx-background-color: transparent; -fx-border-width: 0;" text="14:30" />
+                        </VBox>
+                    </HBox>
+                </VBox>
+
+                <VBox fx:id="task3" alignment="CENTER" style="-fx-background-color: #268396; -fx-border-color: #e0e0e0; -fx-border-width: 1; -fx-background-radius: 10; -fx-border-radius: 10; -fx-padding: 20; -fx-min-width: 750;">
+                    <HBox alignment="CENTER" spacing="100">
+                        <VBox alignment="CENTER_LEFT" spacing="5">
+                            <Button fx:id="taskTitle3" style="-fx-font-weight: bold; -fx-font-size: 18px; -fx-background-color: transparent; -fx-border-width: 0; -fx-text-fill: white;" text="Your task" />
+                            <Button fx:id="taskState3" style="-fx-text-fill: white; -fx-background-color: transparent; -fx-border-width: 0;" text="State" />
+                        </VBox>
+                        <VBox alignment="CENTER_RIGHT" spacing="5">
+                            <Button fx:id="taskDate3" style="-fx-text-fill: white; -fx-background-color: transparent; -fx-border-width: 0;" text="12-10-2024" />
+                            <Button fx:id="taskTime3" style="-fx-text-fill: white; -fx-background-color: transparent; -fx-border-width: 0;" text="14:30" />
+                        </VBox>
+                    </HBox>
+                </VBox>
+
+                <VBox fx:id="task4" alignment="CENTER" style="-fx-background-color: #268396; -fx-border-color: #e0e0e0; -fx-border-width: 1; -fx-background-radius: 10; -fx-border-radius: 10; -fx-padding: 20; -fx-min-width: 750;">
+                    <HBox alignment="CENTER" spacing="100">
+                        <VBox alignment="CENTER_LEFT" spacing="5">
+                            <Button fx:id="taskTitle4" style="-fx-font-weight: bold; -fx-font-size: 18px; -fx-background-color: transparent; -fx-border-width: 0; -fx-text-fill: white;" text="Your task" />
+                            <Button fx:id="taskState4" style="-fx-text-fill: white; -fx-background-color: transparent; -fx-border-width: 0;" text="State" />
+                        </VBox>
+                        <VBox alignment="CENTER_RIGHT" spacing="5">
+                            <Button fx:id="taskDate4" style="-fx-text-fill: white; -fx-background-color: transparent; -fx-border-width: 0;" text="12-10-2024" />
+                            <Button fx:id="taskTime4" style="-fx-text-fill: white; -fx-background-color: transparent; -fx-border-width: 0;" text="14:30" />
+                        </VBox>
+                    </HBox>
+                </VBox>
+
+                <VBox fx:id="task5" alignment="CENTER" style="-fx-background-color: #268396; -fx-border-color: #e0e0e0; -fx-border-width: 1; -fx-background-radius: 10; -fx-border-radius: 10; -fx-padding: 20; -fx-min-width: 750;">
+                    <HBox alignment="CENTER" spacing="100">
+                        <VBox alignment="CENTER_LEFT" spacing="5">
+                            <Button fx:id="taskTitle5" style="-fx-font-weight: bold; -fx-font-size: 18px; -fx-background-color: transparent; -fx-border-width: 0; -fx-text-fill: white;" text="Your task" />
+                            <Button fx:id="taskState5" style="-fx-text-fill: white; -fx-background-color: transparent; -fx-border-width: 0;" text="State" />
+                        </VBox>
+                        <VBox alignment="CENTER_RIGHT" spacing="5">
+                            <Button fx:id="taskDate5" style="-fx-text-fill: white; -fx-background-color: transparent; -fx-border-width: 0;" text="12-10-2024" />
+                            <Button fx:id="taskTime5" style="-fx-text-fill: white; -fx-background-color: transparent; -fx-border-width: 0;" text="14:30" />
+                        </VBox>
+                    </HBox>
+                </VBox>
+
+                <VBox fx:id="task6" alignment="CENTER" style="-fx-background-color: #268396; -fx-border-color: #e0e0e0; -fx-border-width: 1; -fx-background-radius: 10; -fx-border-radius: 10; -fx-padding: 20; -fx-min-width: 750;">
+                    <HBox alignment="CENTER" spacing="100">
+                        <VBox alignment="CENTER_LEFT" spacing="5">
+                            <Button fx:id="taskTitle6" style="-fx-font-weight: bold; -fx-font-size: 18px; -fx-background-color: transparent; -fx-border-width: 0; -fx-text-fill: white;" text="Your task" />
+                            <Button fx:id="taskState6" style="-fx-text-fill: white; -fx-background-color: transparent; -fx-border-width: 0;" text="State" />
+                        </VBox>
+                        <VBox alignment="CENTER_RIGHT" spacing="5">
+                            <Button fx:id="taskDate6" style="-fx-text-fill: white; -fx-background-color: transparent; -fx-border-width: 0;" text="12-10-2024" />
+                            <Button fx:id="taskTime6" style="-fx-text-fill: white; -fx-background-color: transparent; -fx-border-width: 0;" text="14:30" />
+                        </VBox>
+                    </HBox>
+                </VBox>
+
+                <VBox fx:id="task7" alignment="CENTER" style="-fx-background-color: #268396; -fx-border-color: #e0e0e0; -fx-border-width: 1; -fx-background-radius: 10; -fx-border-radius: 10; -fx-padding: 20; -fx-min-width: 750;">
+                    <HBox alignment="CENTER" spacing="100">
+                        <VBox alignment="CENTER_LEFT" spacing="5">
+                            <Button fx:id="taskTitle7" style="-fx-font-weight: bold; -fx-font-size: 18px; -fx-background-color: transparent; -fx-border-width: 0; -fx-text-fill: white;" text="Your task" />
+                            <Button fx:id="taskState7" style="-fx-text-fill: white; -fx-background-color: transparent; -fx-border-width: 0;" text="State" />
+                        </VBox>
+                        <VBox alignment="CENTER_RIGHT" spacing="5">
+                            <Button fx:id="taskDate7" style="-fx-text-fill: white; -fx-background-color: transparent; -fx-border-width: 0;" text="12-10-2024" />
+                            <Button fx:id="taskTime7" style="-fx-text-fill: white; -fx-background-color: transparent; -fx-border-width: 0;" text="14:30" />
+                        </VBox>
+                    </HBox>
+                </VBox>
+
+            </VBox>
+        </ScrollPane>
+    </center>
+</BorderPane>
