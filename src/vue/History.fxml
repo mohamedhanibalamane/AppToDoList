@@ -10,7 +10,10 @@
 <BorderPane style="-fx-background-color: #f5f5f5;" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1">
     <top>
         <VBox alignment="CENTER" style="-fx-background-color: #8AC5D2; -fx-padding: 25; -fx-background-radius: 0 0 15 15;">
-            <Label style="-fx-font-size: 32px; -fx-font-weight: bold; -fx-text-fill: white; -fx-font-family: 'Arial';" text="Your History" />
+            <HBox alignment="CENTER_LEFT" spacing="20">
+                <Button style="-fx-background-color: transparent; -fx-border-width: 0; -fx-text-fill: white; -fx-font-size: 16px;" text="← Retour" />
+                <Label prefHeight="37.0" prefWidth="436.0" style="-fx-font-size: 32px; -fx-font-weight: bold; -fx-text-fill: white; -fx-font-family: 'Arial';" text="                     Your History" />
+            </HBox>
         </VBox>
     </top>
     
