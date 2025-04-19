@@ -5,6 +5,7 @@ module AppToDoList {
 			requires javafx.base;
 			requires javafx.media;
 			requires java.desktop;
+			requires java.sql;
 		
 		opens model to javafx.graphics, javafx.fxml;
 		opens controller to javafx.graphics, javafx.fxml;
