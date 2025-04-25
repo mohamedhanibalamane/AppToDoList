@@ -34,9 +34,9 @@ public class User {
 	
 	
 
-LinkedList<Task> listoftasks = new LinkedList <Task> ();
-LinkedList<Task> historiquelist = new LinkedList <Task> ();
-LinkedList<Task> corbielist = new LinkedList <Task> ();
+LinkedList<Task2> listoftasks = new LinkedList <Task2> ();
+LinkedList<Task2> historiquelist = new LinkedList <Task2> ();
+LinkedList<Task2> corbielist = new LinkedList <Task2> ();
 	
 	
 	

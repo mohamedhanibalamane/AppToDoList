@@ -2,7 +2,9 @@
 
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Button?>
+<?import javafx.scene.control.DatePicker?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.BorderPane?>
@@ -10,62 +12,72 @@
 <?import javafx.scene.layout.Region?>
 <?import javafx.scene.layout.StackPane?>
 <?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
 
-<BorderPane minHeight="600" minWidth="800" prefHeight="700" prefWidth="950" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1">
+<BorderPane minHeight="600.0" minWidth="800" prefHeight="450.0" prefWidth="950" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.HomeController">
     <!-- Barre latérale gauche -->
     <left>
         <VBox prefWidth="120" spacing="5" style="-fx-background-color: #004A4D;">
             <Label style="-fx-font-weight: bold; -fx-font-size: 18;" text="to-do-liste" textFill="WHITE">
                 <padding><Insets bottom="15" left="10" right="10" top="15" /></padding>
             </Label>
+            
+            <!-- Boutons de navigation -->
             <HBox alignment="CENTER_LEFT" spacing="5">
                 <padding><Insets bottom="5" left="10" right="10" top="5" /></padding>
                 <ImageView fitHeight="16" fitWidth="16" preserveRatio="true">
                     <Image url="@dashboard_icon.png" />
                 </ImageView>
-                <Button style="-fx-font-size: 12; -fx-background-color: transparent; -fx-text-fill: WHITE; -fx-padding: 0;" text="Dashboard" />
+                <Button fx:id="dashboardButton" style="-fx-font-size: 12; -fx-background-color: transparent; -fx-text-fill: WHITE; -fx-padding: 0;" text="Dashboard" />
             </HBox>
+            
             <HBox alignment="CENTER_LEFT" spacing="5">
                 <padding><Insets bottom="5" left="10" right="10" top="5" /></padding>
                 <ImageView fitHeight="16" fitWidth="16" preserveRatio="true">
                     <Image url="@progress_icon.png" />
                 </ImageView>
-                <Button style="-fx-font-size: 12; -fx-background-color: transparent; -fx-text-fill: WHITE; -fx-padding: 0;" text="Progres" />
+                <Button fx:id="progressButton" style="-fx-font-size: 12; -fx-background-color: transparent; -fx-text-fill: WHITE; -fx-padding: 0;" text="Progres" />
             </HBox>
+            
             <HBox alignment="CENTER_LEFT" spacing="5">
                 <padding><Insets bottom="5" left="10" right="10" top="5" /></padding>
                 <ImageView fitHeight="16" fitWidth="16" preserveRatio="true">
                     <Image url="@history_icon.png" />
                 </ImageView>
-                <Button style="-fx-font-size: 12; -fx-background-color: transparent; -fx-text-fill: WHITE; -fx-padding: 0;" text="History" />
+                <Button fx:id="historyButton" style="-fx-font-size: 12; -fx-background-color: transparent; -fx-text-fill: WHITE; -fx-padding: 0;" text="History" />
             </HBox>
+            
             <HBox alignment="CENTER_LEFT" spacing="5">
                 <padding><Insets bottom="5" left="10" right="10" top="5" /></padding>
                 <ImageView fitHeight="16" fitWidth="16" preserveRatio="true">
                     <Image url="@corbay_icon.png" />
                 </ImageView>
-                <Button style="-fx-font-size: 12; -fx-background-color: transparent; -fx-text-fill: WHITE; -fx-padding: 0;" text="Corbay" />
+                <Button fx:id="corbayButton" style="-fx-font-size: 12; -fx-background-color: transparent; -fx-text-fill: WHITE; -fx-padding: 0;" text="Corbay" />
             </HBox>
+            
             <HBox alignment="CENTER_LEFT" spacing="5">
                 <padding><Insets bottom="5" left="10" right="10" top="5" /></padding>
                 <ImageView fitHeight="16" fitWidth="16" preserveRatio="true">
                     <Image url="@tasks_icon.png" />
                 </ImageView>
-                <Button style="-fx-font-size: 12; -fx-background-color: transparent; -fx-text-fill: WHITE; -fx-padding: 0;" text="Your tasks" />
+                <Button fx:id="tasksButton" style="-fx-font-size: 12; -fx-background-color: transparent; -fx-text-fill: WHITE; -fx-padding: 0;" text="Your tasks" />
             </HBox>
-            <Region VBox.vgrow="ALWAYS" />
-            <HBox alignment="CENTER_LEFT" spacing="5">
+            
+            <VBox prefHeight="294.0" prefWidth="120.0" />
+            
+            <HBox alignment="CENTER_LEFT" prefHeight="39.0" prefWidth="120.0" spacing="5">
                 <padding><Insets bottom="5" left="10" right="10" top="5" /></padding>
                 <ImageView fitHeight="16" fitWidth="16" preserveRatio="true">
                     <Image url="@logout_icon.png" />
                 </ImageView>
-                <Button style="-fx-font-size: 12; -fx-background-color: transparent; -fx-text-fill: WHITE; -fx-padding: 0;" text="Logout" />
+                <Button fx:id="logoutButton" prefHeight="23.0" prefWidth="38.0" style="-fx-font-size: 12; -fx-background-color: transparent; -fx-text-fill: WHITE; -fx-padding: 0;" text="Logout" />
             </HBox>
         </VBox>
     </left>
+    
     <!-- Contenu central -->
     <center>
-        <VBox spacing="8" style="-fx-background-color: #FFFFFF;">
+        <VBox prefHeight="648.0" prefWidth="830.0" spacing="8" style="-fx-background-color: #8EDCE3;">
             <!-- En-tête -->
             <StackPane>
                 <ImageView fitHeight="177.0" fitWidth="782.0" preserveRatio="true" rotate="180.0">
@@ -73,226 +85,115 @@
                 </ImageView>
                 <VBox alignment="CENTER_LEFT" prefHeight="177.0" prefWidth="530.0">
                     <padding><Insets bottom="10" left="20" top="10" /></padding>
-                    <Button style="-fx-font-weight: bold; -fx-font-size: 28; -fx-background-color: transparent; -fx-text-fill: BLACK; -fx-padding: 0;" text="Hello Moh !" />
-                    <Button style="-fx-font-size: 13; -fx-background-color: transparent; -fx-text-fill: BLACK; -fx-padding: 0;" text="It's good to see you again." />
+                    <HBox prefHeight="36.0" prefWidth="810.0">
+                        <children>
+                            <Label alignment="CENTER" prefHeight="36.0" prefWidth="73.0" text="Hello">
+                                <font><Font size="27.0" /></font>
+                            </Label>
+                            <Button fx:id="fullNameField" style="-fx-font-weight: bold; -fx-font-size: 28; -fx-background-color: transparent; -fx-text-fill: BLACK; -fx-padding: 0;" text="Moh !" />
+                        </children>
+                    </HBox>
+                    <Label text="It's good to see you again.">
+                        <font><Font size="17.0" /></font>
+                    </Label>
                 </VBox>
             </StackPane>
+            
             <!-- Contenu principal -->
-            <HBox spacing="8" style="-fx-padding: 8;">
-                <VBox spacing="8" HBox.hgrow="ALWAYS">
+            <HBox spacing="8" style="-fx-padding: 8; -fx-background-color: #8EDCE3;">
+                <VBox spacing="8" style="-fx-background-color: #8EDCE3;" HBox.hgrow="ALWAYS">
                     <!-- Première ligne -->
                     <HBox spacing="8">
                         <StackPane style="-fx-background-color: #007B84; -fx-background-radius: 8;" HBox.hgrow="ALWAYS">
                             <padding><Insets bottom="8" left="8" right="8" top="8" /></padding>
                             <HBox alignment="CENTER_LEFT" spacing="8">
                                 <VBox>
-                                    <Button style="-fx-font-weight: bold; -fx-font-size: 15; -fx-background-color: transparent; -fx-text-fill: WHITE; -fx-padding: 0;" text="Your task" />
-                                    <Button style="-fx-font-size: 12; -fx-background-color: transparent; -fx-text-fill: WHITE; -fx-padding: 0;" text="doing new" />
+                                    <Label prefHeight="60.0" prefWidth="209.0" text="   Number of  task doing new" textFill="WHITE">
+                                        <font><Font size="15.0" /></font>
+                                    </Label>
                                 </VBox>
-                                <Region HBox.hgrow="ALWAYS" />
+                                <Region prefHeight="65.0" prefWidth="19.0" HBox.hgrow="ALWAYS" />
                                 <VBox alignment="CENTER_RIGHT">
-                                    <Button style="-fx-font-weight: bold; -fx-font-size: 15; -fx-background-color: transparent; -fx-text-fill: WHITE; -fx-padding: 0;" text="14:30" />
-                                    <Button style="-fx-font-size: 12; -fx-background-color: transparent; -fx-text-fill: WHITE; -fx-padding: 0;" text="30min" />
+                                    <Button fx:id="tasksDoingButton" style="-fx-font-size: 12; -fx-background-color: transparent; -fx-text-fill: WHITE; -fx-padding: 0;" text="0" />
                                 </VBox>
                             </HBox>
                         </StackPane>
+                        
                         <StackPane prefWidth="120" style="-fx-background-color: #007B84; -fx-background-radius: 8;">
                             <padding><Insets bottom="8" left="8" right="8" top="8" /></padding>
                             <VBox alignment="CENTER">
-                                <Button style="-fx-font-weight: bold; -fx-font-size: 20; -fx-background-color: transparent; -fx-text-fill: WHITE; -fx-padding: 0;" text="36" />
-                                <Button style="-fx-font-size: 12; -fx-background-color: transparent; -fx-text-fill: WHITE; -fx-padding: 0;" text="Tasks Done" />
+                                <Button fx:id="tasksDoneButton" style="-fx-font-weight: bold; -fx-font-size: 20; -fx-background-color: transparent; -fx-text-fill: WHITE; -fx-padding: 0;" text="0" />
+                                <Label text="Tasks Done" textFill="WHITE" />
                                 <ImageView fitHeight="18" fitWidth="18" preserveRatio="true">
                                     <Image url="@check_icon.png" />
                                 </ImageView>
                             </VBox>
                         </StackPane>
+                        
                         <StackPane prefWidth="120" style="-fx-background-color: #AA3333; -fx-background-radius: 8;">
                             <padding><Insets bottom="8" left="8" right="8" top="8" /></padding>
                             <VBox alignment="CENTER">
-                                <Button style="-fx-font-weight: bold; -fx-font-size: 20; -fx-background-color: transparent; -fx-text-fill: WHITE; -fx-padding: 0;" text="12" />
-                                <Button style="-fx-font-size: 12; -fx-background-color: transparent; -fx-text-fill: WHITE; -fx-padding: 0;" text="Tasks filed" />
+                                <Button fx:id="tasksFailedButton" style="-fx-font-weight: bold; -fx-font-size: 20; -fx-background-color: transparent; -fx-text-fill: WHITE; -fx-padding: 0;" text="0" />
+                                <Label text="Tasks filed" textFill="WHITE" />
                                 <ImageView fitHeight="18" fitWidth="18" preserveRatio="true">
                                     <Image url="@x_icon.png" />
                                 </ImageView>
                             </VBox>
                         </StackPane>
                     </HBox>
+                    
                     <!-- Deuxième ligne -->
                     <HBox spacing="8">
                         <StackPane prefWidth="160" style="-fx-background-color: #007B84; -fx-background-radius: 8;">
                             <padding><Insets bottom="8" left="8" right="8" top="8" /></padding>
                             <VBox alignment="CENTER">
-                                <Button style="-fx-font-size: 14; -fx-background-color: transparent; -fx-text-fill: WHITE; -fx-padding: 0;" text="this" />
-                                <Button style="-fx-font-weight: bold; -fx-font-size: 20; -fx-background-color: transparent; -fx-text-fill: WHITE; -fx-padding: 0;" text="day" />
+                                <Label prefHeight="17.0" prefWidth="46.0" text="This" textFill="WHITE">
+                                    <font><Font size="14.0" /></font>
+                                </Label>
+                                <Button fx:id="dayButton" style="-fx-font-weight: bold; -fx-font-size: 20; -fx-background-color: transparent; -fx-text-fill: WHITE; -fx-padding: 0;" text="Day" />
                             </VBox>
                         </StackPane>
+                        
                         <StackPane prefWidth="160" style="-fx-background-color: #007B84; -fx-background-radius: 8;">
                             <padding><Insets bottom="8" left="8" right="8" top="8" /></padding>
                             <VBox alignment="CENTER">
-                                <Button style="-fx-font-size: 14; -fx-background-color: transparent; -fx-text-fill: WHITE; -fx-padding: 0;" text="coins" />
-                                <Button style="-fx-font-weight: bold; -fx-font-size: 20; -fx-background-color: transparent; -fx-text-fill: WHITE; -fx-padding: 0;" text="2057c" />
+                                <Label text="coins" textFill="WHITE">
+                                    <font><Font size="13.0" /></font>
+                                </Label>
+                                <Button fx:id="coinsButton" style="-fx-font-weight: bold; -fx-font-size: 20; -fx-background-color: transparent; -fx-text-fill: WHITE; -fx-padding: 0;" text="0c" />
                             </VBox>
                         </StackPane>
+                        
                         <StackPane style="-fx-background-color: #007B84; -fx-background-radius: 8;" HBox.hgrow="ALWAYS">
                             <padding><Insets bottom="8" left="8" right="8" top="8" /></padding>
                             <VBox alignment="CENTER">
-                                <Button style="-fx-font-size: 14; -fx-background-color: transparent; -fx-text-fill: WHITE; -fx-padding: 0;" text="Your" />
-                                <Button style="-fx-font-size: 14; -fx-background-color: transparent; -fx-text-fill: WHITE; -fx-padding: 0;" text="progres" />
-                                <Button style="-fx-font-weight: bold; -fx-font-size: 28; -fx-background-color: transparent; -fx-text-fill: WHITE; -fx-padding: 0;" text="94%" />
+                                <Label text="Your" textFill="WHITE" />
+                                <Label text="progres" textFill="WHITE" />
+                                <Button fx:id="progressPercentButton" style="-fx-font-weight: bold; -fx-font-size: 28; -fx-background-color: transparent; -fx-text-fill: WHITE; -fx-padding: 0;" text="0%" />
                             </VBox>
                         </StackPane>
                     </HBox>
-                    <!-- Troisième ligne -->
-                    <HBox spacing="8">
-                        <StackPane style="-fx-background-color: #007B84; -fx-background-radius: 8;" HBox.hgrow="ALWAYS">
-                            <padding><Insets bottom="8" left="8" right="8" top="8" /></padding>
-                            <VBox>
-                                <Button style="-fx-font-weight: bold; -fx-font-size: 15; -fx-background-color: transparent; -fx-text-fill: WHITE; -fx-padding: 0;" text="Meet" />
-                                <Button style="-fx-font-size: 13; -fx-background-color: transparent; -fx-text-fill: WHITE; -fx-padding: 0;" text="POO2 TD" />
-                                <Region VBox.vgrow="ALWAYS" />
-                                <HBox>
-                                    <Button style="-fx-font-weight: bold; -fx-font-size: 14; -fx-background-color: transparent; -fx-text-fill: WHITE; -fx-padding: 0;" text="17:45" />
-                                    <Region HBox.hgrow="ALWAYS" />
-                                    <Button style="-fx-font-size: 13; -fx-background-color: transparent; -fx-text-fill: WHITE; -fx-padding: 0;" text="h30min" />
-                                </HBox>
-                            </VBox>
-                        </StackPane>
-                        <StackPane style="-fx-background-color: #007B84; -fx-background-radius: 8;" HBox.hgrow="ALWAYS">
-                            <padding><Insets bottom="8" left="8" right="8" top="8" /></padding>
-                            <VBox>
-                                <Button style="-fx-font-weight: bold; -fx-font-size: 15; -fx-background-color: transparent; -fx-text-fill: WHITE; -fx-padding: 0;" text="Sport" />
-                                <Button style="-fx-font-size: 13; -fx-background-color: transparent; -fx-text-fill: WHITE; -fx-padding: 0;" text="triceps/pole" />
-                                <Region VBox.vgrow="ALWAYS" />
-                                <HBox>
-                                    <Button style="-fx-font-weight: bold; -fx-font-size: 14; -fx-background-color: transparent; -fx-text-fill: WHITE; -fx-padding: 0;" text="20:45" />
-                                    <Region HBox.hgrow="ALWAYS" />
-                                    <Button style="-fx-font-size: 13; -fx-background-color: transparent; -fx-text-fill: WHITE; -fx-padding: 0;" text="2h" />
-                                </HBox>
-                            </VBox>
-                        </StackPane>
-                    </HBox>
-                    <!-- Quatrième ligne -->
-                    <HBox spacing="8">
-                        <StackPane style="-fx-background-color: #007B84; -fx-background-radius: 8;" HBox.hgrow="ALWAYS">
-                            <padding><Insets bottom="8" left="8" right="8" top="8" /></padding>
-                            <VBox>
-                                <Button style="-fx-font-weight: bold; -fx-font-size: 15; -fx-background-color: transparent; -fx-text-fill: WHITE; -fx-padding: 0;" text="Meet" />
-                                <Button style="-fx-font-size: 13; -fx-background-color: transparent; -fx-text-fill: WHITE; -fx-padding: 0;" text="Projet POO2" />
-                                <Region VBox.vgrow="ALWAYS" />
-                                <HBox>
-                                    <Button style="-fx-font-weight: bold; -fx-font-size: 14; -fx-background-color: transparent; -fx-text-fill: WHITE; -fx-padding: 0;" text="23:45" />
-                                    <Region HBox.hgrow="ALWAYS" />
-                                    <Button style="-fx-font-size: 13; -fx-background-color: transparent; -fx-text-fill: WHITE; -fx-padding: 0;" text="2h30min" />
-                                </HBox>
-                            </VBox>
-                        </StackPane>
-                        <StackPane style="-fx-background-color: #007B84; -fx-background-radius: 8;" HBox.hgrow="ALWAYS">
-                            <padding><Insets bottom="8" left="8" right="8" top="8" /></padding>
-                            <VBox>
-                                <Button style="-fx-font-weight: bold; -fx-font-size: 15; -fx-background-color: transparent; -fx-text-fill: WHITE; -fx-padding: 0;" text="Salat" />
-                                <Button style="-fx-font-size: 13; -fx-background-color: transparent; -fx-text-fill: WHITE; -fx-padding: 0;" text="Icha" />
-                                <Region VBox.vgrow="ALWAYS" />
-                                <HBox>
-                                    <Button style="-fx-font-weight: bold; -fx-font-size: 14; -fx-background-color: transparent; -fx-text-fill: WHITE; -fx-padding: 0;" text="22:45" />
-                                    <Region HBox.hgrow="ALWAYS" />
-                                    <Button style="-fx-font-size: 13; -fx-background-color: transparent; -fx-text-fill: WHITE; -fx-padding: 0;" text="30min" />
-                                </HBox>
-                            </VBox>
-                        </StackPane>
-                    </HBox>
-                    <!-- Cinquième ligne -->
-                    <HBox spacing="8">
-                        <StackPane style="-fx-background-color: #007B84; -fx-background-radius: 8;" HBox.hgrow="ALWAYS">
-                            <padding><Insets bottom="8" left="8" right="8" top="8" /></padding>
-                            <VBox>
-                                <Button style="-fx-font-weight: bold; -fx-font-size: 15; -fx-background-color: transparent; -fx-text-fill: WHITE; -fx-padding: 0;" text="Meet" />
-                                <Button style="-fx-font-size: 13; -fx-background-color: transparent; -fx-text-fill: WHITE; -fx-padding: 0;" text="POO2" />
-                                <Region VBox.vgrow="ALWAYS" />
-                                <HBox>
-                                    <Button style="-fx-font-weight: bold; -fx-font-size: 14; -fx-background-color: transparent; -fx-text-fill: WHITE; -fx-padding: 0;" text="17:45" />
-                                    <Region HBox.hgrow="ALWAYS" />
-                                    <Button style="-fx-font-size: 13; -fx-background-color: transparent; -fx-text-fill: WHITE; -fx-padding: 0;" text="h30min" />
-                                </HBox>
-                            </VBox>
-                        </StackPane>
-                        <StackPane style="-fx-background-color: #007B84; -fx-background-radius: 8;" HBox.hgrow="ALWAYS">
-                            <padding><Insets bottom="8" left="8" right="8" top="8" /></padding>
-                            <Button style="-fx-font-weight: bold; -fx-font-size: 28; -fx-background-color: transparent; -fx-text-fill: WHITE; -fx-padding: 0;" text="+" />
-                        </StackPane>
-                    </HBox>
+                    
+                    <DatePicker fx:id="datePicker" nodeOrientation="RIGHT_TO_LEFT" prefHeight="34.0" prefWidth="158.0" />
                 </VBox>
+                
                 <!-- Colonne droite -->
-                <VBox prefWidth="200" style="-fx-background-color: #004A4D; -fx-background-radius: 8;">
+                <VBox prefHeight="333.0" prefWidth="306.0" style="-fx-background-color: #004A4D; -fx-background-radius: 8;">
                     <padding><Insets bottom="10" left="10" right="10" top="10" /></padding>
-                    <Button style="-fx-font-weight: bold; -fx-font-size: 15; -fx-background-color: transparent; -fx-text-fill: WHITE; -fx-padding: 0;" text="Create Your tasks" />
-                    <VBox spacing="8" VBox.vgrow="ALWAYS">
-                        <padding><Insets top="8" /></padding>
-                        <!-- Tâche 1 -->
-                        <StackPane style="-fx-background-color: WHITE; -fx-background-radius: 6;">
-                            <padding><Insets bottom="6" left="6" right="6" top="6" /></padding>
-                            <HBox alignment="CENTER_LEFT" spacing="6">
-                                <Button style="-fx-font-size: 12; -fx-background-color: transparent; -fx-text-fill: BLACK; -fx-padding: 0;" text="POO2 Project" />
-                                <Region HBox.hgrow="ALWAYS" />
-                                <VBox alignment="CENTER_RIGHT">
-                                    <Button style="-fx-font-size: 11; -fx-background-color: transparent; -fx-text-fill: BLACK; -fx-padding: 0;" text="09:00" />
-                                    <Button style="-fx-font-size: 10; -fx-background-color: transparent; -fx-text-fill: BLACK; -fx-padding: 0;" text="2h" />
-                                </VBox>
-                            </HBox>
-                        </StackPane>
-                        <!-- Tâche 2 -->
-                        <StackPane style="-fx-background-color: WHITE; -fx-background-radius: 6;">
-                            <padding><Insets bottom="6" left="6" right="6" top="6" /></padding>
-                            <HBox alignment="CENTER_LEFT" spacing="6">
-                                <Button style="-fx-font-size: 12; -fx-background-color: transparent; -fx-text-fill: BLACK; -fx-padding: 0;" text="Gym Session" />
-                                <Region HBox.hgrow="ALWAYS" />
-                                <VBox alignment="CENTER_RIGHT">
-                                    <Button style="-fx-font-size: 11; -fx-background-color: transparent; -fx-text-fill: BLACK; -fx-padding: 0;" text="12:30" />
-                                    <Button style="-fx-font-size: 10; -fx-background-color: transparent; -fx-text-fill: BLACK; -fx-padding: 0;" text="1h30" />
-                                </VBox>
-                            </HBox>
-                        </StackPane>
-                        <!-- Tâche 3 -->
-                        <StackPane style="-fx-background-color: WHITE; -fx-background-radius: 6;">
-                            <padding><Insets bottom="6" left="6" right="6" top="6" /></padding>
-                            <HBox alignment="CENTER_LEFT" spacing="6">
-                                <Button style="-fx-font-size: 12; -fx-background-color: transparent; -fx-text-fill: BLACK; -fx-padding: 0;" text="Lunch Break" />
-                                <Region HBox.hgrow="ALWAYS" />
-                                <VBox alignment="CENTER_RIGHT">
-                                    <Button style="-fx-font-size: 11; -fx-background-color: transparent; -fx-text-fill: BLACK; -fx-padding: 0;" text="13:00" />
-                                    <Button style="-fx-font-size: 10; -fx-background-color: transparent; -fx-text-fill: BLACK; -fx-padding: 0;" text="1h" />
-                                </VBox>
-                            </HBox>
-                        </StackPane>
-                        <!-- Tâche 4 -->
-                        <StackPane style="-fx-background-color: WHITE; -fx-background-radius: 6;">
-                            <padding><Insets bottom="6" left="6" right="6" top="6" /></padding>
-                            <HBox alignment="CENTER_LEFT" spacing="6">
-                                <Button style="-fx-font-size: 12; -fx-background-color: transparent; -fx-text-fill: BLACK; -fx-padding: 0;" text="Study Session" />
-                                <Region HBox.hgrow="ALWAYS" />
-                                <VBox alignment="CENTER_RIGHT">
-                                    <Button style="-fx-font-size: 11; -fx-background-color: transparent; -fx-text-fill: BLACK; -fx-padding: 0;" text="15:00" />
-                                    <Button style="-fx-font-size: 10; -fx-background-color: transparent; -fx-text-fill: BLACK; -fx-padding: 0;" text="3h" />
-                                </VBox>
-                            </HBox>
-                        </StackPane>
-                        <!-- Tâche 5 -->
-                        <StackPane style="-fx-background-color: WHITE; -fx-background-radius: 6;">
-                            <padding><Insets bottom="6" left="6" right="6" top="6" /></padding>
-                            <HBox alignment="CENTER_LEFT" spacing="6">
-                                <Button style="-fx-font-size: 12; -fx-background-color: transparent; -fx-text-fill: BLACK; -fx-padding: 0;" text="Team Meeting" />
-                                <Region HBox.hgrow="ALWAYS" />
-                                <VBox alignment="CENTER_RIGHT">
-                                    <Button style="-fx-font-size: 11; -fx-background-color: transparent; -fx-text-fill: BLACK; -fx-padding: 0;" text="18:30" />
-                                    <Button style="-fx-font-size: 10; -fx-background-color: transparent; -fx-text-fill: BLACK; -fx-padding: 0;" text="1h" />
-                                </VBox>
-                            </HBox>
-                        </StackPane>
-                        <!-- Bouton Ajouter -->
-                        <StackPane style="-fx-background-color: #CCFF00; -fx-background-radius: 6;">
-                            <padding><Insets bottom="10" left="10" right="10" top="10" /></padding>
-                            <Button style="-fx-font-weight: bold; -fx-font-size: 20; -fx-background-color: transparent; -fx-text-fill: BLACK; -fx-padding: 0;" text="+" />
-                        </StackPane>
-                    </VBox>
+                    <Button fx:id="createTaskButton" style="-fx-font-weight: bold; -fx-font-size: 15; -fx-background-color: transparent; -fx-text-fill: WHITE; -fx-padding: 0;" text="Create Your tasks" />
+                    
+                    <!-- Zone des tâches avec scroll -->
+                    <ScrollPane fitToWidth="true" style="-fx-background: #004A4D; -fx-background-color: transparent;">
+                        <VBox fx:id="tasksContainer" spacing="8" style="-fx-background-color: #004A4D;">
+                            <padding><Insets top="8" /></padding>
+                        </VBox>
+                    </ScrollPane>
+                    
+                    <!-- Bouton d'ajout -->
+                    <StackPane style="-fx-background-color: #CCFF00; -fx-background-radius: 6;">
+                        <padding><Insets bottom="10" left="10" right="10" top="10" /></padding>
+                        <Button fx:id="addTaskButton" style="-fx-font-weight: bold; -fx-font-size: 20; -fx-background-color: transparent; -fx-text-fill: BLACK; -fx-padding: 0;" text="+" />
+                    </StackPane>
                 </VBox>
             </HBox>
         </VBox>
