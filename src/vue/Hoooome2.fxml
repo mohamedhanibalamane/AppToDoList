@@ -80,7 +80,7 @@
         <VBox prefHeight="648.0" prefWidth="830.0" spacing="8" style="-fx-background-color: #8EDCE3;">
             <!-- En-tête -->
             <StackPane>
-                <ImageView fitHeight="177.0" fitWidth="782.0" preserveRatio="true" rotate="180.0">
+                <ImageView fitHeight="177.0" fitWidth="825.0" rotate="180.0">
                     <Image url="@pack.jpg" />
                 </ImageView>
                 <VBox alignment="CENTER_LEFT" prefHeight="177.0" prefWidth="530.0">
