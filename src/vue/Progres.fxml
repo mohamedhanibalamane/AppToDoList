@@ -14,7 +14,7 @@
 <?import javafx.scene.shape.Circle?>
 <?import javafx.scene.text.Font?>
 
-<BorderPane prefHeight="500.0" prefWidth="700.0" style="-fx-background-color: #4891A0;" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1">
+<BorderPane prefHeight="601.0" prefWidth="700.0" style="-fx-background-color: #4891A0;" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1">
     <!-- Barre supérieure -->
     <top>
         <VBox alignment="CENTER" style="-fx-background-color: #4891A0; -fx-padding: 15; -fx-background-radius: 0 0 10 10;">
@@ -94,9 +94,9 @@
     <center>
         <VBox alignment="TOP_CENTER" prefHeight="450.0" prefWidth="600.0" spacing="15" style="-fx-padding: 15;">
             <!-- Titre "State" -->
-            <Label text="State" textFill="white">
+            <Label text="Progres" textFill="white">
                 <font>
-                    <Font size="24.0" />
+                    <Font size="23.0" />
                 </font>
             </Label>
             
@@ -107,12 +107,12 @@
                     <StackPane>
                         <Circle fill="transparent" radius="80" stroke="white" strokeDashArray="452.16" strokeDashOffset="22.608" strokeWidth="12" />
                         <VBox alignment="CENTER" prefHeight="172.0" prefWidth="158.0">
-                            <Button mnemonicParsing="false" prefHeight="56.0" prefWidth="82.0" style="-fx-background-color: #4891A0;" text="95%" textFill="WHITE">
+                            <Button mnemonicParsing="false" prefHeight="56.0" prefWidth="109.0" style="-fx-background-color: #4891A0;" text="33.33%" textFill="WHITE">
                                 <font>
                                     <Font size="24.0" />
                                 </font>
                             </Button>
-                            <Label text="les task paser" textFill="white">
+                            <Label text="Tasks filed :" textFill="white">
                                 <font>
                                     <Font size="14.0" />
                                 </font>
@@ -139,52 +139,44 @@
                         </font>
                     </Label>
                     <Separator style="-fx-background-color: #A0A0A0; -fx-opacity: 0.5;" />
-                    <HBox alignment="CENTER_LEFT" spacing="4">
-                        <Label prefHeight="22.0" prefWidth="46.0" text="score: " textFill="#c0c0c0">
-                            <font>
-                                <Font size="14.0" />
-                            </font>
-                        </Label>
-                        <Button prefHeight="24.0" prefWidth="48.0" style="-fx-background-color: #4891A0; -fx-text-fill: white; -fx-font-size: 12px; -fx-background-radius: 4;" text="2000" />
-                    </HBox>
                     <HBox prefHeight="26.0" prefWidth="100.0">
                         <children>
-                            <Label text="Tasks:   " textFill="#c0c0c0">
+                            <Label prefHeight="20.0" prefWidth="78.0" text="Tasks:   " textFill="#c0c0c0">
                                 <font>
                                     <Font size="14.0" />
                                 </font>
                             </Label>
-                            <Button prefHeight="24.0" prefWidth="48.0" style="-fx-background-color: #4891A0; -fx-text-fill: white; -fx-font-size: 12px; -fx-background-radius: 4;" text="20" />
+                            <Button prefHeight="24.0" prefWidth="48.0" style="-fx-background-color: #4891A0; -fx-text-fill: white; -fx-font-size: 12px; -fx-background-radius: 4;" text="3" />
                         </children>
                     </HBox>
                     <HBox prefHeight="80.0" prefWidth="160.0">
                         <children>
-                            <Label text="Done:   " textFill="#c0c0c0">
+                            <Label text="Tasks Done :" textFill="#c0c0c0">
                                 <font>
                                     <Font size="14.0" />
                                 </font>
                             </Label>
-                            <Button prefHeight="24.0" prefWidth="50.0" style="-fx-background-color: #4891A0; -fx-text-fill: white; -fx-font-size: 12px; -fx-background-radius: 4;" text="10" />
+                            <Button prefHeight="24.0" prefWidth="50.0" style="-fx-background-color: #4891A0; -fx-text-fill: white; -fx-font-size: 12px; -fx-background-radius: 4;" text="2" textFill="#05f545" />
                         </children>
                     </HBox>
                     <HBox prefHeight="80.0" prefWidth="160.0">
                         <children>
-                            <Label text="Filed:    " textFill="#c0c0c0">
+                            <Label prefHeight="20.0" prefWidth="88.0" text="Tasks filed :" textFill="SILVER">
                                 <font>
                                     <Font size="14.0" />
                                 </font>
                             </Label>
-                            <Button prefHeight="24.0" prefWidth="48.0" style="-fx-background-color: #4891A0; -fx-text-fill: white; -fx-font-size: 12px; -fx-background-radius: 4;" text="2" />
+                            <Button prefHeight="25.0" prefWidth="61.0" style="-fx-background-color: #4891A0; -fx-text-fill: white; -fx-font-size: 12px; -fx-background-radius: 4;" text="1" textFill="#f20404" />
                         </children>
                     </HBox>
                     <HBox prefHeight="80.0" prefWidth="160.0">
                         <children>
-                            <Label text="Cones:  " textFill="#c0c0c0">
+                            <Label prefHeight="20.0" prefWidth="111.0" text="coins :" textFill="#c0c0c0">
                                 <font>
                                     <Font size="14.0" />
                                 </font>
                             </Label>
-                            <Button prefHeight="24.0" prefWidth="50.0" style="-fx-background-color: #4891A0; -fx-text-fill: white; -fx-font-size: 12px; -fx-background-radius: 4;" text="768.48" />
+                            <Button prefHeight="25.0" prefWidth="84.0" style="-fx-background-color: #4891A0; -fx-text-fill: white; -fx-font-size: 12px; -fx-background-radius: 4;" text="60c" />
                         </children>
                     </HBox>
                 </VBox>
@@ -194,12 +186,12 @@
                     <StackPane>
                         <Circle fill="transparent" radius="80" stroke="white" strokeDashArray="452.16" strokeDashOffset="135.648" strokeWidth="12" />
                         <VBox alignment="CENTER">
-                            <Button mnemonicParsing="false" style="-fx-background-color: #4891A0;" text="71.5%" textFill="WHITE">
+                            <Button mnemonicParsing="false" style="-fx-background-color: #4891A0;" text="66.66%" textFill="WHITE">
                                 <font>
                                     <Font size="22.0" />
                                 </font>
                             </Button>
-                            <Label text="task done" textFill="white">
+                            <Label text="Tasks Done :" textFill="white">
                                 <font>
                                     <Font size="14.0" />
                                 </font>
@@ -216,6 +208,20 @@
             
             <!-- Séparateur -->
             <Separator prefHeight="38.0" prefWidth="540.0" style="-fx-padding: 8 0;" />
+         <HBox prefHeight="100.0" prefWidth="200.0">
+            <children>
+               <Label prefHeight="30.0" prefWidth="195.0" style="-fx-background-color: #268396;" text=" State of This Month :" textFill="WHITE">
+                  <font>
+                     <Font size="20.0" />
+                  </font>
+               </Label>
+               <Button mnemonicParsing="false" prefHeight="30.0" prefWidth="60.0" style="-fx-background-color: #268396;" text="month">
+                  <font>
+                     <Font size="14.0" />
+                  </font>
+               </Button>
+            </children>
+         </HBox>
             
             <!-- Section inférieure centrée -->
             <HBox alignment="CENTER" spacing="80">
@@ -223,12 +229,12 @@
                 <VBox alignment="CENTER_LEFT" prefHeight="170.0" prefWidth="277.0" spacing="8">
                     <HBox prefHeight="80.0" prefWidth="160.0">
                         <children>
-                            <Label text="Cones: " textFill="white">
+                            <Label text="Coins: " textFill="white">
                                 <font>
                                     <Font size="14.0" />
                                 </font>
                             </Label>
-                            <Button prefHeight="24.0" prefWidth="57.0" style="-fx-background-color: #4891A0; -fx-text-fill: white; -fx-font-size: 12px; -fx-background-radius: 4;" text="2057" />
+                            <Button prefHeight="25.0" prefWidth="84.0" style="-fx-background-color: #4891A0; -fx-text-fill: white; -fx-font-size: 12px; -fx-background-radius: 4;" text="1150c" />
                         </children>
                     </HBox>
                     <HBox prefHeight="80.0" prefWidth="160.0">
@@ -238,17 +244,7 @@
                                     <Font size="14.0" />
                                 </font>
                             </Label>
-                            <Button alignment="TOP_LEFT" prefHeight="24.0" prefWidth="50.0" style="-fx-background-color: #4891A0; -fx-text-fill: white; -fx-font-size: 12px; -fx-background-radius: 4;" text="723" />
-                        </children>
-                    </HBox>
-                    <HBox prefHeight="80.0" prefWidth="160.0">
-                        <children>
-                            <Label text="Pased: " textFill="white">
-                                <font>
-                                    <Font size="14.0" />
-                                </font>
-                            </Label>
-                            <Button prefHeight="24.0" prefWidth="50.0" style="-fx-background-color: #4891A0; -fx-text-fill: white; -fx-font-size: 12px; -fx-background-radius: 4;" text="687" />
+                            <Button alignment="CENTER" prefHeight="24.0" prefWidth="50.0" style="-fx-background-color: #4891A0; -fx-text-fill: white; -fx-font-size: 12px; -fx-background-radius: 4;" text="49" />
                         </children>
                     </HBox>
                     <HBox prefHeight="80.0" prefWidth="160.0">
@@ -258,7 +254,7 @@
                                     <Font size="14.0" />
                                 </font>
                             </Label>
-                            <Button prefHeight="24.0" prefWidth="50.0" style="-fx-background-color: #4891A0; -fx-text-fill: white; -fx-font-size: 12px; -fx-background-radius: 4;" text="601" />
+                            <Button prefHeight="25.0" prefWidth="85.0" style="-fx-background-color: #4891A0; -fx-text-fill: white; -fx-font-size: 12px; -fx-background-radius: 4;" text="41" />
                         </children>
                     </HBox>
                     <HBox prefHeight="80.0" prefWidth="160.0">
@@ -268,17 +264,7 @@
                                     <Font size="14.0" />
                                 </font>
                             </Label>
-                            <Button prefHeight="24.0" prefWidth="50.0" style="-fx-background-color: #4891A0; -fx-text-fill: white; -fx-font-size: 12px; -fx-background-radius: 4;" text="86" />
-                        </children>
-                    </HBox>
-                    <HBox prefHeight="43.0" prefWidth="277.0">
-                        <children>
-                            <Label text="Score: " textFill="white">
-                                <font>
-                                    <Font size="14.0" />
-                                </font>
-                            </Label>
-                            <Button prefHeight="24.0" prefWidth="59.0" style="-fx-background-color: #4891A0; -fx-text-fill: white; -fx-font-size: 12px; -fx-background-radius: 4;" text="173690" />
+                            <Button prefHeight="25.0" prefWidth="94.0" style="-fx-background-color: #4891A0; -fx-text-fill: white; -fx-font-size: 12px; -fx-background-radius: 4;" text="8" />
                         </children>
                     </HBox>
                 </VBox>
