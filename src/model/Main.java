@@ -23,10 +23,10 @@ public class Main extends Application {
 			Scene scene = new Scene(root, 800, 600);
 			Image icon = new Image("TooDo.png");
 			stage.getIcons().add(icon);
-			
-			
 			stage.setScene(scene);
 			stage.show();
+			 
+			
 			
 			stage.setOnCloseRequest(event -> {
 				event.consume();
