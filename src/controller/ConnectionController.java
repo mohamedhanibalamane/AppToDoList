@@ -11,7 +11,10 @@ import javafx.scene.control.Hyperlink;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
+import model.UserDAO;
+
 import java.io.IOException;
+import java.sql.SQLException;
 
 public class ConnectionController {
 
@@ -37,21 +40,32 @@ public class ConnectionController {
     private void handleSignup(ActionEvent event) {
         if (validateFields()) {
             try {
-                // Chargement du fichier FXML avec FXMLLoader
+                // Vérifier si l'utilisateur existe déjà
+                if (UserDAO.userExists(emailField.getText())) {
+                    showError("Cet email est déjà utilisé");
+                    return;
+                }
+                
+                // Ajouter le nouvel utilisateur
+                UserDAO.addUser(
+                    fullNameField.getText().trim(),
+                    emailField.getText().trim(),
+                    passwordField.getText()
+                );
+                
+                // Charger la vue Home
                 FXMLLoader loader = new FXMLLoader(getClass().getResource("/vue/Hoooome2.fxml"));
                 Parent root = loader.load();
-                
-                // Récupération du contrôleur de la vue Home
                 HomeController homeController = loader.getController();
-                
-                // Passage du nom complet à la vue Home
                 homeController.setUserName(fullNameField.getText().trim());
                 
-                // Configuration et affichage de la nouvelle scène
                 Stage stage = (Stage) signupButton.getScene().getWindow();
                 stage.setScene(new Scene(root));
                 stage.setTitle("To-Do List Application - Dashboard");
                 stage.show();
+            } catch (SQLException e) {
+                showError("Erreur de base de données: " + e.getMessage());
+                e.printStackTrace();
             } catch (IOException e) {
                 showError("Erreur de chargement de la vue: " + e.getMessage());
                 e.printStackTrace();

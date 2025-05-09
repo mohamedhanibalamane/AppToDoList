@@ -28,7 +28,7 @@
                 <ImageView fitHeight="16" fitWidth="16" preserveRatio="true">
                     <Image url="@dashboard_icon.png" />
                 </ImageView>
-                <Button fx:id="dashboardButton" style="-fx-font-size: 12; -fx-background-color: transparent; -fx-text-fill: WHITE; -fx-padding: 0;" text="Dashboard" />
+                <Button fx:id="dashboardButton" style="-fx-font-size: 12; -fx-background-color: transparent; -fx-text-fill: WHITE; -fx-padding: 0;" text="📊 Dashboard" />
             </HBox>
             
             <HBox alignment="CENTER_LEFT" spacing="5">
@@ -36,7 +36,7 @@
                 <ImageView fitHeight="16" fitWidth="16" preserveRatio="true">
                     <Image url="@progress_icon.png" />
                 </ImageView>
-                <Button fx:id="progressButton" style="-fx-font-size: 12; -fx-background-color: transparent; -fx-text-fill: WHITE; -fx-padding: 0;" text="Progres" />
+                <Button fx:id="progressButton" style="-fx-font-size: 12; -fx-background-color: transparent; -fx-text-fill: WHITE; -fx-padding: 0;" text="📈 Progres" />
             </HBox>
             
             <HBox alignment="CENTER_LEFT" spacing="5">
@@ -44,7 +44,7 @@
                 <ImageView fitHeight="16" fitWidth="16" preserveRatio="true">
                     <Image url="@history_icon.png" />
                 </ImageView>
-                <Button fx:id="historyButton" style="-fx-font-size: 12; -fx-background-color: transparent; -fx-text-fill: WHITE; -fx-padding: 0;" text="History" />
+                <Button fx:id="historyButton" style="-fx-font-size: 12; -fx-background-color: transparent; -fx-text-fill: WHITE; -fx-padding: 0;" text="🕒 History" />
             </HBox>
             
             <HBox alignment="CENTER_LEFT" spacing="5">
@@ -52,7 +52,7 @@
                 <ImageView fitHeight="16" fitWidth="16" preserveRatio="true">
                     <Image url="@corbay_icon.png" />
                 </ImageView>
-                <Button fx:id="corbayButton" style="-fx-font-size: 12; -fx-background-color: transparent; -fx-text-fill: WHITE; -fx-padding: 0;" text="Corbay" />
+                <Button fx:id="corbayButton" style="-fx-font-size: 12; -fx-background-color: transparent; -fx-text-fill: WHITE; -fx-padding: 0;" text="💼 Corbay" />
             </HBox>
             
             <HBox alignment="CENTER_LEFT" spacing="5">
@@ -60,7 +60,7 @@
                 <ImageView fitHeight="16" fitWidth="16" preserveRatio="true">
                     <Image url="@tasks_icon.png" />
                 </ImageView>
-                <Button fx:id="tasksButton" style="-fx-font-size: 12; -fx-background-color: transparent; -fx-text-fill: WHITE; -fx-padding: 0;" text="Your tasks" />
+                <Button fx:id="tasksButton" style="-fx-font-size: 12; -fx-background-color: transparent; -fx-text-fill: WHITE; -fx-padding: 0;" text="✅ Your tasks" />
             </HBox>
             
             <VBox prefHeight="294.0" prefWidth="120.0" />
@@ -70,7 +70,7 @@
                 <ImageView fitHeight="16" fitWidth="16" preserveRatio="true">
                     <Image url="@logout_icon.png" />
                 </ImageView>
-                <Button fx:id="logoutButton" prefHeight="23.0" prefWidth="38.0" style="-fx-font-size: 12; -fx-background-color: transparent; -fx-text-fill: WHITE; -fx-padding: 0;" text="Logout" />
+                <Button fx:id="logoutButton" prefHeight="23.0" prefWidth="65.0" style="-fx-font-size: 12; -fx-background-color: transparent; -fx-text-fill: WHITE; -fx-padding: 0;" text="🚪 Logout" />
             </HBox>
         </VBox>
     </left>
@@ -80,7 +80,7 @@
         <VBox prefHeight="648.0" prefWidth="830.0" spacing="8" style="-fx-background-color: #8EDCE3;">
             <!-- En-tête -->
             <StackPane>
-                <ImageView fitHeight="177.0" fitWidth="825.0" rotate="180.0">
+                <ImageView fitHeight="177.0" fitWidth="831.0" rotate="180.0">
                     <Image url="@pack.jpg" />
                 </ImageView>
                 <VBox alignment="CENTER_LEFT" prefHeight="177.0" prefWidth="530.0">
@@ -175,6 +175,8 @@
                     </HBox>
                     
                     <DatePicker fx:id="datePicker" nodeOrientation="RIGHT_TO_LEFT" prefHeight="34.0" prefWidth="158.0" />
+                    <Label fx:id="congratsLabel" style="-fx-text-fill: green; -fx-font-weight: bold;" text="Congratulations! You've won a 500 Mo top-up on your phone number. Enjoy it!" visible="false" />
+                    <VBox fx:id="reminderBox" spacing="10" visible="false" />
                 </VBox>
                 
                 <!-- Colonne droite -->
@@ -182,17 +184,18 @@
                     <padding><Insets bottom="10" left="10" right="10" top="10" /></padding>
                     <Button fx:id="createTaskButton" style="-fx-font-weight: bold; -fx-font-size: 15; -fx-background-color: transparent; -fx-text-fill: WHITE; -fx-padding: 0;" text="Create Your tasks" />
                     
-                    <!-- Zone des tâches avec scroll -->
-                    <ScrollPane fitToWidth="true" style="-fx-background: #004A4D; -fx-background-color: transparent;">
-                        <VBox fx:id="tasksContainer" spacing="8" style="-fx-background-color: #004A4D;">
-                            <padding><Insets top="8" /></padding>
-                        </VBox>
-                    </ScrollPane>
+                    <!-- Dans la partie des tâches -->
+<ScrollPane fitToWidth="true" style="-fx-background: #004A4D; -fx-background-color: transparent;">
+    <VBox fx:id="tasksContainer" spacing="8" style="-fx-background-color: #004A4D;">
+        <padding><Insets top="8" /></padding>
+        <!-- Les tâches seront ajoutées dynamiquement ici -->
+    </VBox>
+</ScrollPane>
                     
                     <!-- Bouton d'ajout -->
                     <StackPane style="-fx-background-color: #CCFF00; -fx-background-radius: 6;">
                         <padding><Insets bottom="10" left="10" right="10" top="10" /></padding>
-                        <Button fx:id="addTaskButton" style="-fx-font-weight: bold; -fx-font-size: 20; -fx-background-color: transparent; -fx-text-fill: BLACK; -fx-padding: 0;" text="+" />
+                        <Button fx:id="addTaskButton" prefHeight="26.0" prefWidth="255.0" style="-fx-font-weight: bold; -fx-font-size: 20; -fx-background-color: transparent; -fx-text-fill: BLACK; -fx-padding: 0;" text="+" />
                     </StackPane>
                 </VBox>
             </HBox>
