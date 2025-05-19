@@ -55,13 +55,6 @@
     <Button fx:id="historyButton" onAction="#handleHistory" style="-fx-font-size: 12; -fx-background-color: transparent; -fx-text-fill: WHITE; -fx-padding: 0;" text="🕒 History"/>
 </HBox>
 
-<HBox alignment="CENTER_LEFT" spacing="5">
-    <padding><Insets bottom="5" left="10" right="10" top="5"/></padding>
-    <ImageView fitHeight="16" fitWidth="16">
-        <Image url="@corbay_icon.png"/>
-    </ImageView>
-    <Button fx:id="corbayButton" onAction="#handleCorbay" style="-fx-font-size: 12; -fx-background-color: transparent; -fx-text-fill: WHITE; -fx-padding: 0;" text="💼 Corbay"/>
-</HBox>
 
 <HBox alignment="CENTER_LEFT" spacing="5">
     <padding><Insets bottom="5" left="10" right="10" top="5"/></padding>

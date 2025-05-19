@@ -44,7 +44,7 @@ import java.util.Optional;
 
 public class HomeController {
 
-    @FXML private Button dashboardButton, progressButton, historyButton, corbayButton, tasksButton, logoutButton;
+    @FXML private Button dashboardButton, progressButton, historyButton, tasksButton, logoutButton;
     @FXML private Button fullNameField, addTaskButton, tasksDoingButton, tasksDoneButton, tasksFailedButton;
     @FXML private Button dayButton, coinsButton, progressPercentButton, createTaskButton;
     @FXML private DatePicker datePicker;
@@ -104,7 +104,7 @@ public class HomeController {
         dashboardButton.setOnAction(e -> loadView("/vue/Hoooome2.fxml"));
         progressButton.setOnAction(e -> loadView("/vue/Progres.fxml"));
         historyButton.setOnAction(e -> loadView("/vue/History.fxml"));
-        corbayButton.setOnAction(e -> loadView("/vue/Corbay.fxml"));
+        
         tasksButton.setOnAction(e -> loadTasksView());
         
         logoutButton.setOnAction(e -> {
@@ -895,18 +895,19 @@ return grid;
             FXMLLoader loader = new FXMLLoader(getClass().getResource(fxmlPath));
             Parent root = loader.load();
             
+            // Transfert des données utilisateur à tous les contrôleurs
             if (loader.getController() instanceof HomeController) {
                 HomeController controller = (HomeController) loader.getController();
                 controller.initUserData(userEmail, userName);
             } else if (loader.getController() instanceof TaskController) {
                 TaskController controller = (TaskController) loader.getController();
-                controller.initUserData(userEmail); // Utilisez initUserData au lieu de updateTasks
+                controller.initUserData(userEmail, userName); // Ajoutez userName
             } else if (loader.getController() instanceof HistoryController) {
                 HistoryController controller = (HistoryController) loader.getController();
-                controller.loadHistory(userEmail);
+                controller.loadHistory(userEmail, userName); // Modifiez cette méthode
             } else if (loader.getController() instanceof ProgressController) {
                 ProgressController controller = (ProgressController) loader.getController();
-                controller.loadProgress(userEmail);
+                controller.loadProgress(userEmail, userName); // Modifiez cette méthode
             }
             
             Stage stage = (Stage) dashboardButton.getScene().getWindow();
@@ -924,7 +925,7 @@ return grid;
             
             TaskController taskController = loader.getController();
             if (taskController != null) {
-                taskController.initUserData(userEmail);
+                taskController.initUserData(userEmail, userName); // Ajoutez userName comme second paramètre
             }
             
             Stage stage = (Stage) tasksButton.getScene().getWindow();
@@ -957,10 +958,10 @@ return grid;
         alert.showAndWait();
     }
 
-	public void setUserName(String trim) {
-		// TODO Auto-generated method stub
-		
-	}
+    public void setUserName(String name) {
+        this.userName = name;
+        updateUserNameDisplay();
+    }
 	
 	private void checkAndHandleExpiredTasks() {
 	    List<Pane> tasksToRemove = new ArrayList<>();

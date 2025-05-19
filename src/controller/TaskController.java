@@ -27,7 +27,7 @@ public class TaskController implements Initializable {
     @FXML private Button dashboardButton;
     @FXML private Button progressButton;
     @FXML private Button historyButton;
-    @FXML private Button corbayButton;
+   
     @FXML private Button tasksButton;
     @FXML private Button logoutButton;
     @FXML private Button backButton;
@@ -39,6 +39,8 @@ public class TaskController implements Initializable {
     
     
     private String userEmail;
+    private String userName;
+    
     private List<Task> allTasks = new ArrayList<>();
 
     // Méthode d'initialisation appelée automatiquement
@@ -82,8 +84,6 @@ public class TaskController implements Initializable {
         // Bouton History
         historyButton.setOnAction(e -> loadView("/vue/History.fxml"));
         
-        // Bouton Corbay
-        corbayButton.setOnAction(e -> loadView("/vue/Corbay.fxml"));
         
         // Bouton Tasks (recharge la vue actuelle)
         tasksButton.setOnAction(e -> loadView("/vue/Task.fxml"));
@@ -110,26 +110,24 @@ public class TaskController implements Initializable {
         try {
             FXMLLoader loader = new FXMLLoader(getClass().getResource(fxmlPath));
             Parent root = loader.load();
-
-            // Transfert de l'email utilisateur si nécessaire
+            
             if (loader.getController() instanceof HomeController) {
                 HomeController controller = (HomeController) loader.getController();
-                controller.initUserData(userEmail, ""); // ou userName si tu veux l'envoyer aussi
+                controller.initUserData(userEmail, userName);
             } else if (loader.getController() instanceof TaskController) {
                 TaskController controller = (TaskController) loader.getController();
-                controller.initUserData(userEmail);
+                controller.initUserData(userEmail, userName);
             } else if (loader.getController() instanceof HistoryController) {
                 HistoryController controller = (HistoryController) loader.getController();
-                controller.loadHistory(userEmail);
+                controller.loadHistory(userEmail, userName);
             } else if (loader.getController() instanceof ProgressController) {
                 ProgressController controller = (ProgressController) loader.getController();
-                controller.loadProgress(userEmail);
+                controller.loadProgress(userEmail, userName);
             }
-
+            
             Stage stage = (Stage) dashboardButton.getScene().getWindow();
             stage.setScene(new Scene(root));
             stage.show();
-
         } catch (IOException e) {
             showError("Erreur de chargement de la vue: " + e.getMessage());
         }
@@ -137,11 +135,12 @@ public class TaskController implements Initializable {
 
 
     // Étape 6: Initialisation des données utilisateur
-    public void initUserData(String email) {
+    public void initUserData(String email, String name) {
         this.userEmail = email;
+        this.userName = name;
         try {
             allTasks = TaskDAO.getUserTasks(userEmail);
-            updateTasks(allTasks); // Affiche tout sans filtre au départ
+            updateTasks(allTasks);
         } catch (SQLException e) {
             showError("Erreur de chargement des tâches: " + e.getMessage());
         }
@@ -341,7 +340,7 @@ public class TaskController implements Initializable {
                 // Mise à jour en base
                 TaskDAO.updateTask(userEmail, oldTask, newTask);
                 // Mise à jour de l'affichage
-                initUserData(userEmail); // recharge toutes les tâches
+                initUserData(userEmail, userEmail); // recharge toutes les tâches
             } catch (Exception e) {
                 showError("Erreur lors de la mise à jour de la tâche: " + e.getMessage());
             }

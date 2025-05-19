@@ -41,12 +41,13 @@ public class ProgressController implements Initializable {
     @FXML private Button dashboardButton;
     @FXML private Button progressButton;
     @FXML private Button historyButton;
-    @FXML private Button corbayButton;
+    
     @FXML private Button tasksButton;
     @FXML private Button logoutButton;
     @FXML private Button backButton;
     
     private String userEmail;
+    private String userName;
     private LocalDate currentDate = LocalDate.now();
 
     @Override
@@ -55,8 +56,9 @@ public class ProgressController implements Initializable {
         monthButton.setText(currentDate.getMonth().toString());
     }
 
-    public void loadProgress(String email) {
+    public void loadProgress(String email, String name) {
         this.userEmail = email;
+        this.userName = name;
         refreshProgress();
     }
 
@@ -125,10 +127,7 @@ public class ProgressController implements Initializable {
         loadView("/vue/History.fxml");
     }
 
-    @FXML
-    private void handleCorbay(ActionEvent event) {
-        loadView("/vue/Corbay.fxml");
-    }
+    
 
     @FXML
     private void handleTasks(ActionEvent event) {
@@ -158,19 +157,18 @@ public class ProgressController implements Initializable {
             FXMLLoader loader = new FXMLLoader(getClass().getResource(fxmlPath));
             Parent root = loader.load();
             
-            // Transfert des données utilisateur si nécessaire
             if (loader.getController() instanceof HomeController) {
                 HomeController controller = (HomeController) loader.getController();
-                controller.initUserData(userEmail, "");
+                controller.initUserData(userEmail, userName);
             } else if (loader.getController() instanceof TaskController) {
                 TaskController controller = (TaskController) loader.getController();
-                controller.initUserData(userEmail);
+                controller.initUserData(userEmail, userName);
             } else if (loader.getController() instanceof HistoryController) {
                 HistoryController controller = (HistoryController) loader.getController();
-                controller.loadHistory(userEmail);
+                controller.loadHistory(userEmail, userName);
             } else if (loader.getController() instanceof ProgressController) {
                 ProgressController controller = (ProgressController) loader.getController();
-                controller.loadProgress(userEmail);
+                controller.loadProgress(userEmail, userName);
             }
             
             Stage stage = (Stage) dashboardButton.getScene().getWindow();

@@ -45,7 +45,7 @@
             <Button fx:id="dashboardButton" style="-fx-font-size: 12; -fx-background-color: transparent; -fx-text-fill: WHITE; -fx-padding: 5 10;" text="📊 Dashboard" />
             <Button fx:id="progressButton" style="-fx-font-size: 12; -fx-background-color: transparent; -fx-text-fill: WHITE; -fx-padding: 5 10;" text="📈 Progres" />
             <Button fx:id="historyButton" style="-fx-font-size: 12; -fx-background-color: transparent; -fx-text-fill: WHITE; -fx-padding: 5 10;" text="🕒 History" />
-            <Button fx:id="corbayButton" style="-fx-font-size: 12; -fx-background-color: transparent; -fx-text-fill: WHITE; -fx-padding: 5 10;" text="💼 Corbay" />
+            
             <Button fx:id="tasksButton" style="-fx-font-size: 12; -fx-background-color: transparent; -fx-text-fill: WHITE; -fx-padding: 5 10;" text="✅ Your tasks" />
             
             <Region VBox.vgrow="ALWAYS" />

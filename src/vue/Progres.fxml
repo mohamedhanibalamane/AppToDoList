@@ -57,13 +57,7 @@
     <Button fx:id="historyButton" onAction="#handleHistory" style="-fx-font-size: 12; -fx-background-color: transparent; -fx-text-fill: WHITE; -fx-padding: 0;" text="🕒 History" />
 </HBox>
 
-<HBox alignment="CENTER_LEFT" spacing="5">
-    <padding><Insets bottom="5" left="10" right="10" top="5" /></padding>
-    <ImageView fitHeight="16" fitWidth="16">
-        <Image url="@corbay_icon.png" />
-    </ImageView>
-    <Button fx:id="corbayButton" onAction="#handleCorbay" style="-fx-font-size: 12; -fx-background-color: transparent; -fx-text-fill: WHITE; -fx-padding: 0;" text="💼 Corbay" />
-</HBox>
+
 
 <HBox alignment="CENTER_LEFT" spacing="5">
     <padding><Insets bottom="5" left="10" right="10" top="5" /></padding>
@@ -99,13 +93,16 @@
                     <StackPane>
                         <Circle fx:id="progressCircleFailed" fill="transparent" radius="80" stroke="white" strokeDashArray="452.16" strokeDashOffset="452.16" strokeWidth="12" />
                         <VBox alignment="CENTER" prefHeight="172.0" prefWidth="158.0">
-                     <Button fx:id="allFailedButton" prefHeight="35.0" prefWidth="61.0" style="-fx-background-color: #4891A0; -fx-text-fill: white; -fx-font-size: 12px; -fx-background-radius: 4;" text="0%" textFill="WHITE" />
-                            <Label text="Tasks filed :" textFill="white">
+                     <Button fx:id="allFailedButton" prefHeight="35.0" prefWidth="61.0" style="-fx-background-color: #4891A0; -fx-text-fill: white; -fx-font-size: 12px; -fx-background-radius: 4;" text="0%" textFill="WHITE">
+                        <font>
+                           <Font size="22.0" />
+                        </font></Button>
+                            <Label text="All your" textFill="white">
                                 <font>
                                     <Font size="14.0" />
                                 </font>
                             </Label>
-                            <Label text="this day" textFill="white">
+                            <Label text="Tasks filed :" textFill="white">
                                 <font>
                                     <Font size="14.0" />
                                 </font>
@@ -179,12 +176,12 @@
                                     <Font size="22.0" />
                                 </font>
                             </Button>
-                            <Label text="Tasks Done :" textFill="white">
+                            <Label text="All your" textFill="white">
                                 <font>
                                     <Font size="14.0" />
                                 </font>
                             </Label>
-                            <Label text="this day" textFill="white">
+                            <Label text="Tasks Done :" textFill="white">
                                 <font>
                                     <Font size="14.0" />
                                 </font>
